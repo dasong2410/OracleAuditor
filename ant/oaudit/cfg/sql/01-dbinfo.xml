@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqls>
+  <sql title="DB Users" desc=""><![CDATA[
+select username, user_id, account_status, default_tablespace, temporary_tablespace
+  from dba_users
+ order by user_id
+  ]]></sql>
+
+  <sql title="Database properties" desc="数据库属性"><![CDATA[
+select * from database_properties
+ order by property_name
+  ]]></sql>
+
+  <sql title="Database parameters" desc="数据库参数"><![CDATA[
+select name parameter_name, value, display_value, description
+  from v$parameter
+ order by lower(name)
+  ]]></sql>
+
+  <sql title="Tablespace Usage" desc="表空间使用情况"><![CDATA[
+select a.tablespace_name, 
+       trunc(a.bytes/1024/1024/1024, 2) "TOTAL(G)", 
+       trunc(b.bytes/1024/1024/1024, 2) "FREE(G)",
+       trunc(b.bytes/a.bytes, 4)*100 "FREE(%)"
+  from (select tablespace_name, sum(bytes) bytes from dba_data_files
+         group by tablespace_name) a,
+       (select tablespace_name, sum(bytes) bytes from dba_free_space
+         group by tablespace_name) b
+ where a.tablespace_name = b.tablespace_name
+ order by a.bytes desc
+  ]]></sql>
+
+  <sql title="Datafiles" desc="数据文件列表"><![CDATA[
+select file_id, file_name, trunc(bytes/1024/1024/1024, 2) "SIZE(G)", status, autoextensible, tablespace_name
+  from dba_data_files
+ order by file_id
+  ]]></sql>
+
+  <sql title="Top 100 huge segments" desc="前100个占空间大的段"><![CDATA[
+select rownum id, a.*
+  from (select owner, segment_name, segment_type, trunc(sum(bytes)/1024/1024/1024, 2) "SIZE(G)"
+          from dba_segments
+         group by owner, segment_name, segment_type
+         order by sum(bytes) desc) a
+ where rownum<=100
+  ]]></sql>
+</sqls>

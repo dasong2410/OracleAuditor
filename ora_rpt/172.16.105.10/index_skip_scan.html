@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <meta http-equiv='content-type' content='text/html; charset=utf-8'>
+    <meta charset='utf-8'>
+    <meta name='robots' content='all'>
+    <meta name='author' content='w3school.com.cn'>
+    <link rel='stylesheet' type='text/css' href='../css/c5.css'>
+    <title>
+Index skip scan&nbsp;&nbsp;&nbsp;&nbsp;[索引跳扫]
+    </title>
+  </head>
+  <body class='html' id='tags'>
+    <div>
+      <h2>
+Index skip scan&nbsp;&nbsp;&nbsp;&nbsp;[索引跳扫]
+      </h2>
+      <table class='dataintable'>
+        <tbody>
+          <tr>
+            <th>SQL_ID</th>
+            <th>CHILD_NUMBER</th>
+            <th>OBJECT_OWNER</th>
+            <th>OBJECT_NAME</th>
+            <th>SQL_FULLTEXT</th>
+          </tr>
+          <tr>
+            <td>64cdqdupmnyw3</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>PK_OS_OBJECT_WFENTRY</td>
+            <td>select t.workflow_id from os_object_wfentry_history t where t.object_id = (select t.object_id from os_object_wfentry t where t.workflow_id = :1) and exists (select 1 from os_wfentry w where w.id = t.workflow_id and w.name = :2)</td>
+          </tr>
+          <tr>
+            <td>64cdqdupmnyw3</td>
+            <td>1</td>
+            <td>NBPF</td>
+            <td>PK_OS_OBJECT_WFENTRY</td>
+            <td>select t.workflow_id from os_object_wfentry_history t where t.object_id = (select t.object_id from os_object_wfentry t where t.workflow_id = :1) and exists (select 1 from os_wfentry w where w.id = t.workflow_id and w.name = :2)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

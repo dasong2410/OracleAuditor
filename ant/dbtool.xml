@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project OracleAuditor with libraries in sub-folder">
+	<!--this file was created by Eclipse Runnable JAR Export Wizard-->
+	<!--ANT 1.7 is required                                        -->
+	<!--define folder properties-->
+	<property name="dir.buildfile" value="./oaudit" />
+	<property name="dir.workspace" value="D:/workspace" />
+	<property name="dir.jarfile" value="${dir.buildfile}" />
+	<property name="lib" value="lib" />
+
+	<target name="prepare">
+		<delete dir="${dir.buildfile}" />
+
+		<mkdir dir="${dir.jarfile}/${lib}" />
+		<mkdir dir="${dir.jarfile}/ora_rpt" />
+		<mkdir dir="${dir.jarfile}/cfg" />
+
+		<copy todir="${dir.jarfile}/${lib}">
+			<fileset dir="${dir.workspace}/OracleAuditor/lib" />
+		</copy>
+
+		<copy todir="${dir.jarfile}/ora_rpt">
+			<fileset dir="${dir.workspace}/OracleAuditor/ora_rpt" />
+		</copy>
+
+		<copy todir="${dir.jarfile}/cfg">
+			<fileset dir="${dir.workspace}/OracleAuditor/cfg" />
+		</copy>
+
+		<copy file="${dir.workspace}/OracleAuditor/readme.txt" todir="${dir.jarfile}" />
+	</target>
+
+	<target name="oaudit" depends="prepare">
+		<jar destfile="${dir.jarfile}/oaudit.jar">
+			<manifest>
+				<attribute name="Main-Class" value="net.dasong.OracleAuditor" />
+				<attribute name="Class-Path" value=". ${lib}/ojdbc6.jar ${lib}/guava-19.0.jar" />
+			</manifest>
+			<fileset dir="${dir.workspace}/OracleAuditor/bin" />
+		</jar>
+	</target>
+
+	<target name="create_run_jar" depends="oaudit" />
+</project>

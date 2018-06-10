@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqls>
+  <sql title="Procedure list" desc="存储过程列表"><![CDATA[
+select owner, object_name
+  from dba_procedures
+ where object_type='PROCEDURE'
+   and owner in(select username from dba_users where account_status='OPEN' and username not in('SYS', 'SYSTEM'))
+ order by owner, object_name
+  ]]></sql>
+
+  <sql title="Function list" desc="函数列表"><![CDATA[
+select owner, object_name
+  from dba_procedures
+ where object_type='FUNCTION'
+   and owner in(select username from dba_users where account_status='OPEN' and username not in('SYS', 'SYSTEM'))
+ order by owner, object_name
+  ]]></sql>
+
+  <sql title="Job list" desc="数据库中的job"><![CDATA[
+select owner, job_name, enabled, job_action
+  from dba_scheduler_jobs
+ where owner in(select username from dba_users where account_status='OPEN' and username not in('SYS', 'SYSTEM'))
+ order by owner, job_name
+  ]]></sql>
+
+  <sql title="Job running" desc="正在执行的job"><![CDATA[
+select owner, job_name, session_id, elapsed_time, cpu_used
+  from dba_scheduler_running_jobs
+ order by elapsed_time desc
+  ]]></sql>
+
+  <sql title="Job run log(elapsed time)" desc="最近3天的job日志，按执行时长排序"><![CDATA[
+select owner, job_name, status, run_duration,
+       to_char(actual_start_date, 'YYYY-MM-DD HH24:MI:SS') actual_start_date,
+       to_char(log_date, 'YYYY-MM-DD HH24:MI:SS') log_date
+  from dba_scheduler_job_run_details
+ where log_date>trunc(sysdate-3)
+   and owner in(select username from dba_users where account_status='OPEN' and username not in('SYS', 'SYSTEM'))
+ order by run_duration desc
+  ]]></sql>
+
+  <sql title="Job run log(failed)" desc="最近3天执行失败的日志"><![CDATA[
+select to_char(log_date, 'YYYY-MM-DD HH24:MI:SS') log_date,
+       to_char(actual_start_date, 'YYYY-MM-DD HH24:MI:SS') actual_start_date,
+       owner, job_name, status, run_duration,
+       additional_info
+  from dba_scheduler_job_run_details
+ where log_date>trunc(sysdate-3)
+   and status='FAILED'
+   and owner in(select username from dba_users where account_status='OPEN' and username not in('SYS', 'SYSTEM'))
+ order by log_date desc, owner, job_name
+  ]]></sql>
+</sqls>

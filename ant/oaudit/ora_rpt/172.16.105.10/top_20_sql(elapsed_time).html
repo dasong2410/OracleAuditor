@@ -1,0 +1,232 @@
+<html>
+  <head>
+    <meta http-equiv='content-type' content='text/html; charset=utf-8'>
+    <meta charset='utf-8'>
+    <meta name='robots' content='all'>
+    <meta name='author' content='w3school.com.cn'>
+    <link rel='stylesheet' type='text/css' href='../css/c5.css'>
+    <title>
+Top 20 sql(elapsed time)&nbsp;&nbsp;&nbsp;&nbsp;[执行时间最长的20个sql]
+    </title>
+  </head>
+  <body class='html' id='tags'>
+    <div>
+      <h2>
+Top 20 sql(elapsed time)&nbsp;&nbsp;&nbsp;&nbsp;[执行时间最长的20个sql]
+      </h2>
+      <table class='dataintable'>
+        <tbody>
+          <tr>
+            <th>SQL_ID</th>
+            <th>CHILD_NUMBER</th>
+            <th>ELAPSED_TIME(s)</th>
+            <th>EXECUTIONS</th>
+            <th>AVERAGE_ELAPSED_TIME</th>
+            <th>PARSING_SCHEMA_NAME</th>
+            <th>SQL_FULLTEXT</th>
+          </tr>
+          <tr>
+            <td>bh7v2mqncg0u6</td>
+            <td>0</td>
+            <td>97248</td>
+            <td>3110948489</td>
+            <td>0</td>
+            <td>KEYWORD</td>
+            <td>SELECT A.KEYID,A.KEYNAME,A.USED,A.PROTYPE FROM TIMEQUERYKEYTABLE A WHERE A.USED IN (3,5) AND ROWNUM<1000</td>
+          </tr>
+          <tr>
+            <td>a9axsajxkx567</td>
+            <td>0</td>
+            <td>10274</td>
+            <td>11597</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT R.TGDID,R.BASE_STATION_ID ,SUBSTR(R.LONGITUDE,1,8) AS LONGITUDE,SUBSTR(R.LATITUDE,1,8) AS LATITUDE,R.ISP_CODE,R.SSID_POSITION ADDRESS FROM NB_GEO_MOBILE_BASESTATION R WHERE R.BASE_STATION_ID = :1</td>
+          </tr>
+          <tr>
+            <td>a9axsajxkx567</td>
+            <td>1</td>
+            <td>6792</td>
+            <td>7455</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT R.TGDID,R.BASE_STATION_ID ,SUBSTR(R.LONGITUDE,1,8) AS LONGITUDE,SUBSTR(R.LATITUDE,1,8) AS LATITUDE,R.ISP_CODE,R.SSID_POSITION ADDRESS FROM NB_GEO_MOBILE_BASESTATION R WHERE R.BASE_STATION_ID = :1</td>
+          </tr>
+          <tr>
+            <td>dbvkky621gqtr</td>
+            <td>0</td>
+            <td>1574</td>
+            <td>31612</td>
+            <td>0</td>
+            <td>NBPF_YF</td>
+            <td>SELECT /*+ parallel */ EXTRACTVALUE(VALUE(T), '/select_list_item/pos') + 1 POS, EXTRACTVALUE(VALUE(T), '/select_list_item/value') RES, EXTRACTVALUE(VALUE(T), '/select_list_item/nonnulls') NONNULLS, EXTRACTVALUE(VALUE(T), '/select_list_item/ndv') NDV, EXTRACTVALUE(VALUE(T), '/select_list_item/split') SPLIT, EXTRACTVALUE(VALUE(T), '/select_list_item/rsize') RSIZE, EXTRACTVALUE(VALUE(T), '/select_list_item/rowcnt') ROWCNT, EXTRACT(VALUE(T), '/select_list_item/hash_val').GETCLOBVAL() HASHVAL FROM TABLE(XMLSEQUENCE(EXTRACT(:B1 , '/process_result/select_list_item'))) T</td>
+          </tr>
+          <tr>
+            <td>dbvkky621gqtr</td>
+            <td>6</td>
+            <td>1417</td>
+            <td>29478</td>
+            <td>0</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT /*+ parallel */ EXTRACTVALUE(VALUE(T), '/select_list_item/pos') + 1 POS, EXTRACTVALUE(VALUE(T), '/select_list_item/value') RES, EXTRACTVALUE(VALUE(T), '/select_list_item/nonnulls') NONNULLS, EXTRACTVALUE(VALUE(T), '/select_list_item/ndv') NDV, EXTRACTVALUE(VALUE(T), '/select_list_item/split') SPLIT, EXTRACTVALUE(VALUE(T), '/select_list_item/rsize') RSIZE, EXTRACTVALUE(VALUE(T), '/select_list_item/rowcnt') ROWCNT, EXTRACT(VALUE(T), '/select_list_item/hash_val').GETCLOBVAL() HASHVAL FROM TABLE(XMLSEQUENCE(EXTRACT(:B1 , '/process_result/select_list_item'))) T</td>
+          </tr>
+          <tr>
+            <td>d8zmmh58w3nz2</td>
+            <td>0</td>
+            <td>1402</td>
+            <td>21938</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT T.JKSBBH,T.KKBH,T.SBLX,T.SBXS,T.JKLX,T.SFKK,T.SSBW,T.AZWZ,T.JSFX,T.SZCD,T.SSBM,T.JKSBJD,T.JKSBWD,T.SBGLDWDM,T.SBGLDWMC,T.LXR,T.LXDH,T.JKZT FROM HCZZ_ZAJKXX T  WHERE T.JKZT != 2 AND T.JKSBJD >= :1 AND T.JKSBWD >= :2 AND T.JKSBJD <= :3 AND T.JKSBWD <= :4</td>
+          </tr>
+          <tr>
+            <td>dbvkky621gqtr</td>
+            <td>3</td>
+            <td>1377</td>
+            <td>26217</td>
+            <td>0</td>
+            <td>NBPF_ATEST</td>
+            <td>SELECT /*+ parallel */ EXTRACTVALUE(VALUE(T), '/select_list_item/pos') + 1 POS, EXTRACTVALUE(VALUE(T), '/select_list_item/value') RES, EXTRACTVALUE(VALUE(T), '/select_list_item/nonnulls') NONNULLS, EXTRACTVALUE(VALUE(T), '/select_list_item/ndv') NDV, EXTRACTVALUE(VALUE(T), '/select_list_item/split') SPLIT, EXTRACTVALUE(VALUE(T), '/select_list_item/rsize') RSIZE, EXTRACTVALUE(VALUE(T), '/select_list_item/rowcnt') ROWCNT, EXTRACT(VALUE(T), '/select_list_item/hash_val').GETCLOBVAL() HASHVAL FROM TABLE(XMLSEQUENCE(EXTRACT(:B1 , '/process_result/select_list_item'))) T</td>
+          </tr>
+          <tr>
+            <td>dbvkky621gqtr</td>
+            <td>4</td>
+            <td>1344</td>
+            <td>25877</td>
+            <td>0</td>
+            <td>NBPF_BTEST</td>
+            <td>SELECT /*+ parallel */ EXTRACTVALUE(VALUE(T), '/select_list_item/pos') + 1 POS, EXTRACTVALUE(VALUE(T), '/select_list_item/value') RES, EXTRACTVALUE(VALUE(T), '/select_list_item/nonnulls') NONNULLS, EXTRACTVALUE(VALUE(T), '/select_list_item/ndv') NDV, EXTRACTVALUE(VALUE(T), '/select_list_item/split') SPLIT, EXTRACTVALUE(VALUE(T), '/select_list_item/rsize') RSIZE, EXTRACTVALUE(VALUE(T), '/select_list_item/rowcnt') ROWCNT, EXTRACT(VALUE(T), '/select_list_item/hash_val').GETCLOBVAL() HASHVAL FROM TABLE(XMLSEQUENCE(EXTRACT(:B1 , '/process_result/select_list_item'))) T</td>
+          </tr>
+          <tr>
+            <td>dbvkky621gqtr</td>
+            <td>5</td>
+            <td>1341</td>
+            <td>25911</td>
+            <td>0</td>
+            <td>YDBIAN</td>
+            <td>SELECT /*+ parallel */ EXTRACTVALUE(VALUE(T), '/select_list_item/pos') + 1 POS, EXTRACTVALUE(VALUE(T), '/select_list_item/value') RES, EXTRACTVALUE(VALUE(T), '/select_list_item/nonnulls') NONNULLS, EXTRACTVALUE(VALUE(T), '/select_list_item/ndv') NDV, EXTRACTVALUE(VALUE(T), '/select_list_item/split') SPLIT, EXTRACTVALUE(VALUE(T), '/select_list_item/rsize') RSIZE, EXTRACTVALUE(VALUE(T), '/select_list_item/rowcnt') ROWCNT, EXTRACT(VALUE(T), '/select_list_item/hash_val').GETCLOBVAL() HASHVAL FROM TABLE(XMLSEQUENCE(EXTRACT(:B1 , '/process_result/select_list_item'))) T</td>
+          </tr>
+          <tr>
+            <td>dbvkky621gqtr</td>
+            <td>1</td>
+            <td>1286</td>
+            <td>26489</td>
+            <td>0</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT /*+ parallel */ EXTRACTVALUE(VALUE(T), '/select_list_item/pos') + 1 POS, EXTRACTVALUE(VALUE(T), '/select_list_item/value') RES, EXTRACTVALUE(VALUE(T), '/select_list_item/nonnulls') NONNULLS, EXTRACTVALUE(VALUE(T), '/select_list_item/ndv') NDV, EXTRACTVALUE(VALUE(T), '/select_list_item/split') SPLIT, EXTRACTVALUE(VALUE(T), '/select_list_item/rsize') RSIZE, EXTRACTVALUE(VALUE(T), '/select_list_item/rowcnt') ROWCNT, EXTRACT(VALUE(T), '/select_list_item/hash_val').GETCLOBVAL() HASHVAL FROM TABLE(XMLSEQUENCE(EXTRACT(:B1 , '/process_result/select_list_item'))) T</td>
+          </tr>
+          <tr>
+            <td>401rty2nncsy8</td>
+            <td>0</td>
+            <td>883</td>
+            <td>11028886</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>SELECT A.CLUEID,A.EXTEND_TYPE,A.BEGINTIME,A.ENDTIME FROM CLUE_EXTEND A WHERE A.EXTEND_STATE='1'  AND ROWNUM <= '10'</td>
+          </tr>
+          <tr>
+            <td>d8u9v2pzgcdxu</td>
+            <td>0</td>
+            <td>838</td>
+            <td>21918</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT T.KKBH,T.KKMC,T.KKWZ,T.LDZX,T.KKLX,T.DWJD,T.DWWD,T.LXR,T.LXDH,T.GXDWDM,T.GXDWMC,T.KKZT FROM HCZZ_ZAKKXX T WHERE T.KKZT!=2 AND T.DWJD>=:1 AND T.DWWD>=:2 AND T.DWJD<=:3 AND T.DWWD<=:4</td>
+          </tr>
+          <tr>
+            <td>231qv0rmmfdbq</td>
+            <td>0</td>
+            <td>607</td>
+            <td>606287</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>SET CONSTRAINTS ALL DEFERRED</td>
+          </tr>
+          <tr>
+            <td>6x8atmwvz74f3</td>
+            <td>0</td>
+            <td>606</td>
+            <td>9303</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT HIGH_VALUE,PARTITION_NAME FROM USER_TAB_PARTITIONS WHERE TABLE_NAME='TRACE_REQUEST_STAT' AND PARTITION_NAME NOT LIKE 'PART_TRACE_%'</td>
+          </tr>
+          <tr>
+            <td>2haaf1r09ay1w</td>
+            <td>0</td>
+            <td>539</td>
+            <td>288026</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>INSERT /*+ BYPASS_RECURSIVE_CHECK */ INTO "FHNSDB"."EMP_CASE_LIST_INFO" with t1 as
+ (select t7.caseid,
+         sum(nvl(t2.DataCount, 0)) DATACOUNTSUM,
+         sum(nvl(t2.DataCount, 0) - nvl(t2.prodatacount, 0)) UNDEALSUM,
+         COUNT(t2.clueid) clueSum
+    from cluetable t2, caseobjecttable t3, casetable t7
+   where t2.objectid(+) = t3.objectid and t3.caseid(+) = t7.caseid
+   group by t7.caseid),
+t2 as
+ (select tt.caseid, count(tt.objectid) objectSum from caseobjecttable tt group by tt.caseid),
+t3 as
+ (select t1.caseid, t1.DATACOUNTSUM, t1.UNDEALSUM, t1.clueSum, nvl(t2.objectsum, 0) objectsum from t1
+    left join t2 on t1.caseid = t2.caseid),
+t4 as
+ (select t3.caseid, t3.DATACOUNTSUM, t3.UNDEALSUM, t3.clueSum, t3.objectsum,
+         tt.casename, tt.casenum, tt.casestatus, tt.classid, tt.typeid, tt.formunit,
+         tt.formdate, tt.formpeople, tt.case_no, tt.flag, tt.sendapproval, tt.createtime from t3
+    left join casetable tt on t3.caseid = tt.caseid)
+select t4.caseid, t4.DATACOUNTSUM, t4.UNDEALSUM, t4.clueSum, t4.objectsum, t4.casename,
+       t4.casenum, t4.casestatus, t4.classid, t4.typeid, t4.formunit, t4.formdate,
+       t4.formpeople, t4.case_no, t4.flag, t4.sendapproval, t4.createtime from t4</td>
+          </tr>
+          <tr>
+            <td>b84m4kj0vgsc1</td>
+            <td>0</td>
+            <td>515</td>
+            <td>11006889</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>SELECT A.OBJECTID,A.CLUETYPE,A.CLUENAME FROM CLUETABLE A WHERE A.CLUEID='165'</td>
+          </tr>
+          <tr>
+            <td>b6tnbjncuqng1</td>
+            <td>0</td>
+            <td>478</td>
+            <td>10995650</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>SELECT IMTYPE,IMID FROM CLUEIMTABLE A WHERE A.CLUEID='165'</td>
+          </tr>
+          <tr>
+            <td>0zas11sqj4ajw</td>
+            <td>0</td>
+            <td>455</td>
+            <td>1211188</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select SYSDATE+1/43200  from dual</td>
+          </tr>
+          <tr>
+            <td>7v27twb71d0az</td>
+            <td>0</td>
+            <td>292</td>
+            <td>303294</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td> delete from "FHNSDB"."EMP_CASE_LIST_INFO"</td>
+          </tr>
+          <tr>
+            <td>8krt1jyf6uztu</td>
+            <td>0</td>
+            <td>238</td>
+            <td>99105</td>
+            <td>0</td>
+            <td>NBPF_YF</td>
+            <td>SELECT PARTITIONED FROM USER_TABLES WHERE TABLE_NAME=:B1 </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

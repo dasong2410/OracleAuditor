@@ -1,0 +1,2111 @@
+<html>
+  <head>
+    <meta http-equiv='content-type' content='text/html; charset=utf-8'>
+    <meta charset='utf-8'>
+    <meta name='robots' content='all'>
+    <meta name='author' content='w3school.com.cn'>
+    <link rel='stylesheet' type='text/css' href='../css/c5.css'>
+    <title>
+Database parameters&nbsp;&nbsp;&nbsp;&nbsp;[数据库参数]
+    </title>
+  </head>
+  <body class='html' id='tags'>
+    <div>
+      <h2>
+Database parameters&nbsp;&nbsp;&nbsp;&nbsp;[数据库参数]
+      </h2>
+      <table class='dataintable'>
+        <tbody>
+          <tr>
+            <th>PARAMETER_NAME</th>
+            <th>VALUE</th>
+            <th>DISPLAY_VALUE</th>
+            <th>DESCRIPTION</th>
+          </tr>
+          <tr>
+            <td>active_instance_count</td>
+            <td>null</td>
+            <td>null</td>
+            <td>number of active instances in the cluster database</td>
+          </tr>
+          <tr>
+            <td>aq_tm_processes</td>
+            <td>1</td>
+            <td>1</td>
+            <td>number of AQ Time Managers to start</td>
+          </tr>
+          <tr>
+            <td>archive_lag_target</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Maximum number of seconds of redos the standby could lose</td>
+          </tr>
+          <tr>
+            <td>asm_diskgroups</td>
+            <td>null</td>
+            <td>null</td>
+            <td>disk groups to mount automatically</td>
+          </tr>
+          <tr>
+            <td>asm_diskstring</td>
+            <td>null</td>
+            <td>null</td>
+            <td>disk set locations for discovery</td>
+          </tr>
+          <tr>
+            <td>asm_power_limit</td>
+            <td>1</td>
+            <td>1</td>
+            <td>number of parallel relocations for disk rebalancing</td>
+          </tr>
+          <tr>
+            <td>asm_preferred_read_failure_groups</td>
+            <td>null</td>
+            <td>null</td>
+            <td>preferred read failure groups</td>
+          </tr>
+          <tr>
+            <td>audit_file_dest</td>
+            <td>/oracle/ora11/admin/ora11g/adump</td>
+            <td>/oracle/ora11/admin/ora11g/adump</td>
+            <td>Directory in which auditing files are to reside</td>
+          </tr>
+          <tr>
+            <td>audit_sys_operations</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>enable sys auditing</td>
+          </tr>
+          <tr>
+            <td>audit_syslog_level</td>
+            <td>null</td>
+            <td>null</td>
+            <td>Syslog facility and level</td>
+          </tr>
+          <tr>
+            <td>audit_trail</td>
+            <td>DB, EXTENDED</td>
+            <td>DB, EXTENDED</td>
+            <td>enable system auditing</td>
+          </tr>
+          <tr>
+            <td>awr_snapshot_time_offset</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Setting for AWR Snapshot Time Offset</td>
+          </tr>
+          <tr>
+            <td>background_core_dump</td>
+            <td>partial</td>
+            <td>partial</td>
+            <td>Core Size for Background Processes</td>
+          </tr>
+          <tr>
+            <td>background_dump_dest</td>
+            <td>/oracle/ora11/diag/rdbms/ora11g/ora11g/trace</td>
+            <td>/oracle/ora11/diag/rdbms/ora11g/ora11g/trace</td>
+            <td>Detached process dump directory</td>
+          </tr>
+          <tr>
+            <td>backup_tape_io_slaves</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>BACKUP Tape I/O slaves</td>
+          </tr>
+          <tr>
+            <td>bitmap_merge_area_size</td>
+            <td>1048576</td>
+            <td>1048576</td>
+            <td>maximum memory allow for BITMAP MERGE</td>
+          </tr>
+          <tr>
+            <td>blank_trimming</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>blank trimming semantics parameter</td>
+          </tr>
+          <tr>
+            <td>buffer_pool_keep</td>
+            <td>null</td>
+            <td>null</td>
+            <td>Number of database blocks/latches in keep buffer pool</td>
+          </tr>
+          <tr>
+            <td>buffer_pool_recycle</td>
+            <td>null</td>
+            <td>null</td>
+            <td>Number of database blocks/latches in recycle buffer pool</td>
+          </tr>
+          <tr>
+            <td>cell_offload_compaction</td>
+            <td>ADAPTIVE</td>
+            <td>ADAPTIVE</td>
+            <td>Cell packet compaction strategy</td>
+          </tr>
+          <tr>
+            <td>cell_offload_decryption</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>enable SQL processing offload of encrypted data to cells</td>
+          </tr>
+          <tr>
+            <td>cell_offload_parameters</td>
+            <td>null</td>
+            <td>null</td>
+            <td>Additional cell offload parameters</td>
+          </tr>
+          <tr>
+            <td>cell_offload_plan_display</td>
+            <td>AUTO</td>
+            <td>AUTO</td>
+            <td>Cell offload explain plan display</td>
+          </tr>
+          <tr>
+            <td>cell_offload_processing</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>enable SQL processing offload to cells</td>
+          </tr>
+          <tr>
+            <td>circuits</td>
+            <td>null</td>
+            <td>null</td>
+            <td>max number of circuits</td>
+          </tr>
+          <tr>
+            <td>client_result_cache_lag</td>
+            <td>3000</td>
+            <td>3000</td>
+            <td>client result cache maximum lag in milliseconds</td>
+          </tr>
+          <tr>
+            <td>client_result_cache_size</td>
+            <td>0</td>
+            <td>0</td>
+            <td>client result cache max size in bytes</td>
+          </tr>
+          <tr>
+            <td>clonedb</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>clone database</td>
+          </tr>
+          <tr>
+            <td>cluster_database</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>if TRUE startup in cluster database mode</td>
+          </tr>
+          <tr>
+            <td>cluster_database_instances</td>
+            <td>1</td>
+            <td>1</td>
+            <td>number of instances to use for sizing cluster db SGA structures</td>
+          </tr>
+          <tr>
+            <td>cluster_interconnects</td>
+            <td>null</td>
+            <td>null</td>
+            <td>interconnects for RAC use</td>
+          </tr>
+          <tr>
+            <td>commit_logging</td>
+            <td>null</td>
+            <td>null</td>
+            <td>transaction commit log write behaviour</td>
+          </tr>
+          <tr>
+            <td>commit_point_strength</td>
+            <td>1</td>
+            <td>1</td>
+            <td>Bias this node has toward not preparing in a two-phase commit</td>
+          </tr>
+          <tr>
+            <td>commit_wait</td>
+            <td>null</td>
+            <td>null</td>
+            <td>transaction commit log wait behaviour</td>
+          </tr>
+          <tr>
+            <td>commit_write</td>
+            <td>null</td>
+            <td>null</td>
+            <td>transaction commit log write behaviour</td>
+          </tr>
+          <tr>
+            <td>compatible</td>
+            <td>11.2.0.0.0</td>
+            <td>11.2.0.0.0</td>
+            <td>Database will be completely compatible with this software version</td>
+          </tr>
+          <tr>
+            <td>control_file_record_keep_time</td>
+            <td>7</td>
+            <td>7</td>
+            <td>control file record keep time in days</td>
+          </tr>
+          <tr>
+            <td>control_files</td>
+            <td>/oracle/ora11/oradata/ora11g/control01.ctl, /oracle/ora11/oradata/ora11g/control02.ctl, /oracle/ora11/oradata/ora11g/control03.ctl</td>
+            <td>/oracle/ora11/oradata/ora11g/control01.ctl, /oracle/ora11/oradata/ora11g/control02.ctl, /oracle/ora11/oradata/ora11g/control03.ctl</td>
+            <td>control file names list</td>
+          </tr>
+          <tr>
+            <td>control_management_pack_access</td>
+            <td>DIAGNOSTIC+TUNING</td>
+            <td>DIAGNOSTIC+TUNING</td>
+            <td>declares which manageability packs are enabled</td>
+          </tr>
+          <tr>
+            <td>core_dump_dest</td>
+            <td>/oracle/ora11/diag/rdbms/ora11g/ora11g/cdump</td>
+            <td>/oracle/ora11/diag/rdbms/ora11g/ora11g/cdump</td>
+            <td>Core dump directory</td>
+          </tr>
+          <tr>
+            <td>cpu_count</td>
+            <td>48</td>
+            <td>48</td>
+            <td>number of CPUs for this instance</td>
+          </tr>
+          <tr>
+            <td>create_bitmap_area_size</td>
+            <td>8388608</td>
+            <td>8388608</td>
+            <td>size of create bitmap buffer for bitmap index</td>
+          </tr>
+          <tr>
+            <td>create_stored_outlines</td>
+            <td>null</td>
+            <td>null</td>
+            <td>create stored outlines for DML statements</td>
+          </tr>
+          <tr>
+            <td>cursor_bind_capture_destination</td>
+            <td>memory+disk</td>
+            <td>memory+disk</td>
+            <td>Allowed destination for captured bind variables</td>
+          </tr>
+          <tr>
+            <td>cursor_sharing</td>
+            <td>EXACT</td>
+            <td>EXACT</td>
+            <td>cursor sharing mode</td>
+          </tr>
+          <tr>
+            <td>cursor_space_for_time</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>use more memory in order to get faster execution</td>
+          </tr>
+          <tr>
+            <td>db_16k_cache_size</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Size of cache for 16K buffers</td>
+          </tr>
+          <tr>
+            <td>db_2k_cache_size</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Size of cache for 2K buffers</td>
+          </tr>
+          <tr>
+            <td>db_32k_cache_size</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Size of cache for 32K buffers</td>
+          </tr>
+          <tr>
+            <td>db_4k_cache_size</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Size of cache for 4K buffers</td>
+          </tr>
+          <tr>
+            <td>db_8k_cache_size</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Size of cache for 8K buffers</td>
+          </tr>
+          <tr>
+            <td>db_block_buffers</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Number of database blocks cached in memory</td>
+          </tr>
+          <tr>
+            <td>db_block_checking</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>header checking and data and index block checking</td>
+          </tr>
+          <tr>
+            <td>db_block_checksum</td>
+            <td>TYPICAL</td>
+            <td>TYPICAL</td>
+            <td>store checksum in db blocks and check during reads</td>
+          </tr>
+          <tr>
+            <td>db_block_size</td>
+            <td>8192</td>
+            <td>8192</td>
+            <td>Size of database block in bytes</td>
+          </tr>
+          <tr>
+            <td>db_cache_advice</td>
+            <td>ON</td>
+            <td>ON</td>
+            <td>Buffer cache sizing advisory</td>
+          </tr>
+          <tr>
+            <td>db_cache_size</td>
+            <td>146028888064</td>
+            <td>136G</td>
+            <td>Size of DEFAULT buffer pool for standard block size buffers</td>
+          </tr>
+          <tr>
+            <td>db_create_file_dest</td>
+            <td>null</td>
+            <td>null</td>
+            <td>default database location</td>
+          </tr>
+          <tr>
+            <td>db_create_online_log_dest_1</td>
+            <td>null</td>
+            <td>null</td>
+            <td>online log/controlfile destination #1</td>
+          </tr>
+          <tr>
+            <td>db_create_online_log_dest_2</td>
+            <td>null</td>
+            <td>null</td>
+            <td>online log/controlfile destination #2</td>
+          </tr>
+          <tr>
+            <td>db_create_online_log_dest_3</td>
+            <td>null</td>
+            <td>null</td>
+            <td>online log/controlfile destination #3</td>
+          </tr>
+          <tr>
+            <td>db_create_online_log_dest_4</td>
+            <td>null</td>
+            <td>null</td>
+            <td>online log/controlfile destination #4</td>
+          </tr>
+          <tr>
+            <td>db_create_online_log_dest_5</td>
+            <td>null</td>
+            <td>null</td>
+            <td>online log/controlfile  destination #5</td>
+          </tr>
+          <tr>
+            <td>db_domain</td>
+            <td>null</td>
+            <td>null</td>
+            <td>directory part of global database name stored with CREATE DATABASE</td>
+          </tr>
+          <tr>
+            <td>db_file_multiblock_read_count</td>
+            <td>128</td>
+            <td>128</td>
+            <td>db block to be read each IO</td>
+          </tr>
+          <tr>
+            <td>db_file_name_convert</td>
+            <td>null</td>
+            <td>null</td>
+            <td>datafile name convert patterns and strings for standby/clone db</td>
+          </tr>
+          <tr>
+            <td>db_files</td>
+            <td>200</td>
+            <td>200</td>
+            <td>max allowable # db files</td>
+          </tr>
+          <tr>
+            <td>db_flash_cache_file</td>
+            <td>null</td>
+            <td>null</td>
+            <td>flash cache file for default block size</td>
+          </tr>
+          <tr>
+            <td>db_flash_cache_size</td>
+            <td>0</td>
+            <td>0</td>
+            <td>flash cache size for db_flash_cache_file</td>
+          </tr>
+          <tr>
+            <td>db_flashback_retention_target</td>
+            <td>1440</td>
+            <td>1440</td>
+            <td>Maximum Flashback Database log retention time in minutes.</td>
+          </tr>
+          <tr>
+            <td>db_keep_cache_size</td>
+            <td>8589934592</td>
+            <td>8G</td>
+            <td>Size of KEEP buffer pool for standard block size buffers</td>
+          </tr>
+          <tr>
+            <td>db_lost_write_protect</td>
+            <td>NONE</td>
+            <td>NONE</td>
+            <td>enable lost write detection</td>
+          </tr>
+          <tr>
+            <td>db_name</td>
+            <td>ora11g</td>
+            <td>ora11g</td>
+            <td>database name specified in CREATE DATABASE</td>
+          </tr>
+          <tr>
+            <td>db_recovery_file_dest</td>
+            <td>null</td>
+            <td>null</td>
+            <td>default database recovery file location</td>
+          </tr>
+          <tr>
+            <td>db_recovery_file_dest_size</td>
+            <td>0</td>
+            <td>0</td>
+            <td>database recovery files size limit</td>
+          </tr>
+          <tr>
+            <td>db_recycle_cache_size</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Size of RECYCLE buffer pool for standard block size buffers</td>
+          </tr>
+          <tr>
+            <td>db_securefile</td>
+            <td>PERMITTED</td>
+            <td>PERMITTED</td>
+            <td>permit securefile storage during lob creation</td>
+          </tr>
+          <tr>
+            <td>db_ultra_safe</td>
+            <td>OFF</td>
+            <td>OFF</td>
+            <td>Sets defaults for other parameters that control protection levels</td>
+          </tr>
+          <tr>
+            <td>db_unique_name</td>
+            <td>ora11g</td>
+            <td>ora11g</td>
+            <td>Database Unique Name</td>
+          </tr>
+          <tr>
+            <td>db_unrecoverable_scn_tracking</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>Track nologging SCN in controlfile</td>
+          </tr>
+          <tr>
+            <td>db_writer_processes</td>
+            <td>6</td>
+            <td>6</td>
+            <td>number of background database writer  processes to start</td>
+          </tr>
+          <tr>
+            <td>dbwr_io_slaves</td>
+            <td>0</td>
+            <td>0</td>
+            <td>DBWR I/O slaves</td>
+          </tr>
+          <tr>
+            <td>ddl_lock_timeout</td>
+            <td>0</td>
+            <td>0</td>
+            <td>timeout to restrict the time that ddls wait for dml lock</td>
+          </tr>
+          <tr>
+            <td>deferred_segment_creation</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>defer segment creation to first insert</td>
+          </tr>
+          <tr>
+            <td>dg_broker_config_file1</td>
+            <td>/oracle/ora11/product/dbs/dr1ora11g.dat</td>
+            <td>/oracle/ora11/product/dbs/dr1ora11g.dat</td>
+            <td>data guard broker configuration file #1</td>
+          </tr>
+          <tr>
+            <td>dg_broker_config_file2</td>
+            <td>/oracle/ora11/product/dbs/dr2ora11g.dat</td>
+            <td>/oracle/ora11/product/dbs/dr2ora11g.dat</td>
+            <td>data guard broker configuration file #2</td>
+          </tr>
+          <tr>
+            <td>dg_broker_start</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>start Data Guard broker (DMON process)</td>
+          </tr>
+          <tr>
+            <td>diagnostic_dest</td>
+            <td>/oracle/ora11</td>
+            <td>/oracle/ora11</td>
+            <td>diagnostic base directory</td>
+          </tr>
+          <tr>
+            <td>disk_asynch_io</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>Use asynch I/O for random access devices</td>
+          </tr>
+          <tr>
+            <td>dispatchers</td>
+            <td>null</td>
+            <td>null</td>
+            <td>specifications of dispatchers</td>
+          </tr>
+          <tr>
+            <td>distributed_lock_timeout</td>
+            <td>60</td>
+            <td>60</td>
+            <td>number of seconds a distributed transaction waits for a lock</td>
+          </tr>
+          <tr>
+            <td>dml_locks</td>
+            <td>6756</td>
+            <td>6756</td>
+            <td>dml locks - one for each table modified in a transaction</td>
+          </tr>
+          <tr>
+            <td>dst_upgrade_insert_conv</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>Enables/Disables internal conversions during DST upgrade</td>
+          </tr>
+          <tr>
+            <td>enable_ddl_logging</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>enable ddl logging</td>
+          </tr>
+          <tr>
+            <td>event</td>
+            <td>null</td>
+            <td>null</td>
+            <td>debug event control - default null string</td>
+          </tr>
+          <tr>
+            <td>fal_client</td>
+            <td>null</td>
+            <td>null</td>
+            <td>FAL client</td>
+          </tr>
+          <tr>
+            <td>fal_server</td>
+            <td>null</td>
+            <td>null</td>
+            <td>FAL server list</td>
+          </tr>
+          <tr>
+            <td>fast_start_io_target</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Upper bound on recovery reads</td>
+          </tr>
+          <tr>
+            <td>fast_start_mttr_target</td>
+            <td>0</td>
+            <td>0</td>
+            <td>MTTR target in seconds</td>
+          </tr>
+          <tr>
+            <td>fast_start_parallel_rollback</td>
+            <td>LOW</td>
+            <td>LOW</td>
+            <td>max number of parallel recovery slaves that may be used</td>
+          </tr>
+          <tr>
+            <td>file_mapping</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>enable file mapping</td>
+          </tr>
+          <tr>
+            <td>fileio_network_adapters</td>
+            <td>null</td>
+            <td>null</td>
+            <td>Network Adapters for File I/O</td>
+          </tr>
+          <tr>
+            <td>filesystemio_options</td>
+            <td>none</td>
+            <td>none</td>
+            <td>IO operations on filesystem files</td>
+          </tr>
+          <tr>
+            <td>fixed_date</td>
+            <td>null</td>
+            <td>null</td>
+            <td>fixed SYSDATE value</td>
+          </tr>
+          <tr>
+            <td>gcs_server_processes</td>
+            <td>0</td>
+            <td>0</td>
+            <td>number of background gcs server processes to start</td>
+          </tr>
+          <tr>
+            <td>global_context_pool_size</td>
+            <td>null</td>
+            <td>null</td>
+            <td>Global Application Context Pool Size in Bytes</td>
+          </tr>
+          <tr>
+            <td>global_names</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>enforce that database links have same name as remote database</td>
+          </tr>
+          <tr>
+            <td>global_txn_processes</td>
+            <td>1</td>
+            <td>1</td>
+            <td>number of background global transaction processes to start</td>
+          </tr>
+          <tr>
+            <td>hash_area_size</td>
+            <td>131072</td>
+            <td>131072</td>
+            <td>size of in-memory hash work area</td>
+          </tr>
+          <tr>
+            <td>hi_shared_memory_address</td>
+            <td>0</td>
+            <td>0</td>
+            <td>SGA starting address (high order 32-bits on 64-bit platforms)</td>
+          </tr>
+          <tr>
+            <td>hs_autoregister</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>enable automatic server DD updates in HS agent self-registration</td>
+          </tr>
+          <tr>
+            <td>ifile</td>
+            <td>null</td>
+            <td>null</td>
+            <td>include file in init.ora</td>
+          </tr>
+          <tr>
+            <td>instance_groups</td>
+            <td>null</td>
+            <td>null</td>
+            <td>list of instance group names</td>
+          </tr>
+          <tr>
+            <td>instance_name</td>
+            <td>ora11g</td>
+            <td>ora11g</td>
+            <td>instance name supported by the instance</td>
+          </tr>
+          <tr>
+            <td>instance_number</td>
+            <td>0</td>
+            <td>0</td>
+            <td>instance number</td>
+          </tr>
+          <tr>
+            <td>instance_type</td>
+            <td>RDBMS</td>
+            <td>RDBMS</td>
+            <td>type of instance to be executed</td>
+          </tr>
+          <tr>
+            <td>java_jit_enabled</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>Java VM JIT enabled</td>
+          </tr>
+          <tr>
+            <td>java_max_sessionspace_size</td>
+            <td>0</td>
+            <td>0</td>
+            <td>max allowed size in bytes of a Java sessionspace</td>
+          </tr>
+          <tr>
+            <td>java_pool_size</td>
+            <td>3758096384</td>
+            <td>3584M</td>
+            <td>size in bytes of java pool</td>
+          </tr>
+          <tr>
+            <td>java_soft_sessionspace_limit</td>
+            <td>0</td>
+            <td>0</td>
+            <td>warning limit on size in bytes of a Java sessionspace</td>
+          </tr>
+          <tr>
+            <td>job_queue_processes</td>
+            <td>1000</td>
+            <td>1000</td>
+            <td>maximum number of job queue slave processes</td>
+          </tr>
+          <tr>
+            <td>large_pool_size</td>
+            <td>3758096384</td>
+            <td>3584M</td>
+            <td>size in bytes of large pool</td>
+          </tr>
+          <tr>
+            <td>ldap_directory_access</td>
+            <td>NONE</td>
+            <td>NONE</td>
+            <td>RDBMS's LDAP access option</td>
+          </tr>
+          <tr>
+            <td>ldap_directory_sysauth</td>
+            <td>no</td>
+            <td>no</td>
+            <td>OID usage parameter</td>
+          </tr>
+          <tr>
+            <td>license_max_sessions</td>
+            <td>0</td>
+            <td>0</td>
+            <td>maximum number of non-system user sessions allowed</td>
+          </tr>
+          <tr>
+            <td>license_max_users</td>
+            <td>0</td>
+            <td>0</td>
+            <td>maximum number of named users that can be created in the database</td>
+          </tr>
+          <tr>
+            <td>license_sessions_warning</td>
+            <td>0</td>
+            <td>0</td>
+            <td>warning level for number of non-system user sessions</td>
+          </tr>
+          <tr>
+            <td>listener_networks</td>
+            <td>null</td>
+            <td>null</td>
+            <td>listener registration networks</td>
+          </tr>
+          <tr>
+            <td>local_listener</td>
+            <td>null</td>
+            <td>null</td>
+            <td>local listener</td>
+          </tr>
+          <tr>
+            <td>lock_name_space</td>
+            <td>null</td>
+            <td>null</td>
+            <td>lock name space used for generating lock names for standby/clone database</td>
+          </tr>
+          <tr>
+            <td>lock_sga</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>Lock entire SGA in physical memory</td>
+          </tr>
+          <tr>
+            <td>log_archive_config</td>
+            <td>null</td>
+            <td>null</td>
+            <td>log archive config parameter</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_1</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #1 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_10</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #10 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_11</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #11 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_12</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #12 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_13</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #13 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_14</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #14 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_15</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #15 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_16</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #16 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_17</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #17 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_18</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #18 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_19</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #19 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_2</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #2 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_20</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #20 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_21</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #21 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_22</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #22 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_23</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #23 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_24</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #24 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_25</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #25 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_26</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #26 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_27</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #27 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_28</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #28 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_29</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #29 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_3</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #3 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_30</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #30 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_31</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #31 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_4</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #4 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_5</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #5 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_6</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #6 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_7</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #7 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_8</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #8 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_9</td>
+            <td>null</td>
+            <td>null</td>
+            <td>archival destination #9 text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_1</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #1 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_10</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #10 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_11</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #11 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_12</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #12 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_13</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #13 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_14</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #14 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_15</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #15 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_16</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #16 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_17</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #17 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_18</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #18 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_19</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #19 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_2</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #2 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_20</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #20 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_21</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #21 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_22</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #22 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_23</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #23 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_24</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #24 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_25</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #25 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_26</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #26 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_27</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #27 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_28</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #28 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_29</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #29 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_3</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #3 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_30</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #30 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_31</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #31 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_4</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #4 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_5</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #5 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_6</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #6 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_7</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #7 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_8</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #8 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_dest_state_9</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>archival destination #9 state text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_duplex_dest</td>
+            <td>null</td>
+            <td>null</td>
+            <td>duplex archival destination text string</td>
+          </tr>
+          <tr>
+            <td>log_archive_format</td>
+            <td>%t_%s_%r.dbf</td>
+            <td>%t_%s_%r.dbf</td>
+            <td>archival destination format</td>
+          </tr>
+          <tr>
+            <td>log_archive_local_first</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>Establish EXPEDITE attribute default value</td>
+          </tr>
+          <tr>
+            <td>log_archive_max_processes</td>
+            <td>4</td>
+            <td>4</td>
+            <td>maximum number of active ARCH processes</td>
+          </tr>
+          <tr>
+            <td>log_archive_min_succeed_dest</td>
+            <td>1</td>
+            <td>1</td>
+            <td>minimum number of archive destinations that must succeed</td>
+          </tr>
+          <tr>
+            <td>log_archive_start</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>start archival process on SGA initialization</td>
+          </tr>
+          <tr>
+            <td>log_archive_trace</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Establish archivelog operation tracing level</td>
+          </tr>
+          <tr>
+            <td>log_buffer</td>
+            <td>268431360</td>
+            <td>268431360</td>
+            <td>redo circular buffer size</td>
+          </tr>
+          <tr>
+            <td>log_checkpoint_interval</td>
+            <td>0</td>
+            <td>0</td>
+            <td># redo blocks checkpoint threshold</td>
+          </tr>
+          <tr>
+            <td>log_checkpoint_timeout</td>
+            <td>1800</td>
+            <td>1800</td>
+            <td>Maximum time interval between checkpoints in seconds</td>
+          </tr>
+          <tr>
+            <td>log_checkpoints_to_alert</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>log checkpoint begin/end to alert file</td>
+          </tr>
+          <tr>
+            <td>log_file_name_convert</td>
+            <td>null</td>
+            <td>null</td>
+            <td>logfile name convert patterns and strings for standby/clone db</td>
+          </tr>
+          <tr>
+            <td>max_dispatchers</td>
+            <td>null</td>
+            <td>null</td>
+            <td>max number of dispatchers</td>
+          </tr>
+          <tr>
+            <td>max_dump_file_size</td>
+            <td>unlimited</td>
+            <td>unlimited</td>
+            <td>Maximum size (in bytes) of dump file</td>
+          </tr>
+          <tr>
+            <td>max_enabled_roles</td>
+            <td>150</td>
+            <td>150</td>
+            <td>max number of roles a user can have enabled</td>
+          </tr>
+          <tr>
+            <td>max_shared_servers</td>
+            <td>null</td>
+            <td>null</td>
+            <td>max number of shared servers</td>
+          </tr>
+          <tr>
+            <td>memory_max_target</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Max size for Memory Target</td>
+          </tr>
+          <tr>
+            <td>memory_target</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Target size of Oracle SGA and PGA memory</td>
+          </tr>
+          <tr>
+            <td>nls_calendar</td>
+            <td>null</td>
+            <td>null</td>
+            <td>NLS calendar system name</td>
+          </tr>
+          <tr>
+            <td>nls_comp</td>
+            <td>BINARY</td>
+            <td>BINARY</td>
+            <td>NLS comparison</td>
+          </tr>
+          <tr>
+            <td>nls_currency</td>
+            <td>null</td>
+            <td>null</td>
+            <td>NLS local currency symbol</td>
+          </tr>
+          <tr>
+            <td>nls_date_format</td>
+            <td>null</td>
+            <td>null</td>
+            <td>NLS Oracle date format</td>
+          </tr>
+          <tr>
+            <td>nls_date_language</td>
+            <td>null</td>
+            <td>null</td>
+            <td>NLS date language name</td>
+          </tr>
+          <tr>
+            <td>nls_dual_currency</td>
+            <td>null</td>
+            <td>null</td>
+            <td>Dual currency symbol</td>
+          </tr>
+          <tr>
+            <td>nls_iso_currency</td>
+            <td>null</td>
+            <td>null</td>
+            <td>NLS ISO currency territory name</td>
+          </tr>
+          <tr>
+            <td>nls_language</td>
+            <td>SIMPLIFIED CHINESE</td>
+            <td>SIMPLIFIED CHINESE</td>
+            <td>NLS language name</td>
+          </tr>
+          <tr>
+            <td>nls_length_semantics</td>
+            <td>BYTE</td>
+            <td>BYTE</td>
+            <td>create columns using byte or char semantics by default</td>
+          </tr>
+          <tr>
+            <td>nls_nchar_conv_excp</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>NLS raise an exception instead of allowing implicit conversion</td>
+          </tr>
+          <tr>
+            <td>nls_numeric_characters</td>
+            <td>null</td>
+            <td>null</td>
+            <td>NLS numeric characters</td>
+          </tr>
+          <tr>
+            <td>nls_sort</td>
+            <td>null</td>
+            <td>null</td>
+            <td>NLS linguistic definition name</td>
+          </tr>
+          <tr>
+            <td>nls_territory</td>
+            <td>CHINA</td>
+            <td>CHINA</td>
+            <td>NLS territory name</td>
+          </tr>
+          <tr>
+            <td>nls_time_format</td>
+            <td>null</td>
+            <td>null</td>
+            <td>time format</td>
+          </tr>
+          <tr>
+            <td>nls_time_tz_format</td>
+            <td>null</td>
+            <td>null</td>
+            <td>time with timezone format</td>
+          </tr>
+          <tr>
+            <td>nls_timestamp_format</td>
+            <td>null</td>
+            <td>null</td>
+            <td>time stamp format</td>
+          </tr>
+          <tr>
+            <td>nls_timestamp_tz_format</td>
+            <td>null</td>
+            <td>null</td>
+            <td>timestamp with timezone format</td>
+          </tr>
+          <tr>
+            <td>O7_DICTIONARY_ACCESSIBILITY</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>Version 7 Dictionary Accessibility Support</td>
+          </tr>
+          <tr>
+            <td>object_cache_max_size_percent</td>
+            <td>10</td>
+            <td>10</td>
+            <td>percentage of maximum size over optimal of the user session's object cache</td>
+          </tr>
+          <tr>
+            <td>object_cache_optimal_size</td>
+            <td>102400</td>
+            <td>102400</td>
+            <td>optimal size of the user session's object cache in bytes</td>
+          </tr>
+          <tr>
+            <td>olap_page_pool_size</td>
+            <td>0</td>
+            <td>0</td>
+            <td>size of the olap page pool in bytes</td>
+          </tr>
+          <tr>
+            <td>open_cursors</td>
+            <td>1000</td>
+            <td>1000</td>
+            <td>max # cursors per session</td>
+          </tr>
+          <tr>
+            <td>open_links</td>
+            <td>100</td>
+            <td>100</td>
+            <td>max # open links per session</td>
+          </tr>
+          <tr>
+            <td>open_links_per_instance</td>
+            <td>100</td>
+            <td>100</td>
+            <td>max # open links per instance</td>
+          </tr>
+          <tr>
+            <td>optimizer_capture_sql_plan_baselines</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>automatic capture of SQL plan baselines for repeatable statements</td>
+          </tr>
+          <tr>
+            <td>optimizer_dynamic_sampling</td>
+            <td>2</td>
+            <td>2</td>
+            <td>optimizer dynamic sampling</td>
+          </tr>
+          <tr>
+            <td>optimizer_features_enable</td>
+            <td>11.2.0.3</td>
+            <td>11.2.0.3</td>
+            <td>optimizer plan compatibility parameter</td>
+          </tr>
+          <tr>
+            <td>optimizer_index_caching</td>
+            <td>0</td>
+            <td>0</td>
+            <td>optimizer percent index caching</td>
+          </tr>
+          <tr>
+            <td>optimizer_index_cost_adj</td>
+            <td>100</td>
+            <td>100</td>
+            <td>optimizer index cost adjustment</td>
+          </tr>
+          <tr>
+            <td>optimizer_mode</td>
+            <td>FIRST_ROWS</td>
+            <td>FIRST_ROWS</td>
+            <td>optimizer mode</td>
+          </tr>
+          <tr>
+            <td>optimizer_secure_view_merging</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>optimizer secure view merging and predicate pushdown/movearound</td>
+          </tr>
+          <tr>
+            <td>optimizer_use_invisible_indexes</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>Usage of invisible indexes (TRUE/FALSE)</td>
+          </tr>
+          <tr>
+            <td>optimizer_use_pending_statistics</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>Control whether to use optimizer pending statistics</td>
+          </tr>
+          <tr>
+            <td>optimizer_use_sql_plan_baselines</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>use of SQL plan baselines for captured sql statements</td>
+          </tr>
+          <tr>
+            <td>os_authent_prefix</td>
+            <td>ops$</td>
+            <td>ops$</td>
+            <td>prefix for auto-logon accounts</td>
+          </tr>
+          <tr>
+            <td>os_roles</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>retrieve roles from the operating system</td>
+          </tr>
+          <tr>
+            <td>parallel_adaptive_multi_user</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>enable adaptive setting of degree for multiple user streams</td>
+          </tr>
+          <tr>
+            <td>parallel_automatic_tuning</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>enable intelligent defaults for parallel execution parameters</td>
+          </tr>
+          <tr>
+            <td>parallel_degree_limit</td>
+            <td>CPU</td>
+            <td>CPU</td>
+            <td>limit placed on degree of parallelism</td>
+          </tr>
+          <tr>
+            <td>parallel_degree_policy</td>
+            <td>MANUAL</td>
+            <td>MANUAL</td>
+            <td>policy used to compute the degree of parallelism (MANUAL/LIMITED/AUTO)</td>
+          </tr>
+          <tr>
+            <td>parallel_execution_message_size</td>
+            <td>16384</td>
+            <td>16384</td>
+            <td>message buffer size for parallel execution</td>
+          </tr>
+          <tr>
+            <td>parallel_force_local</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>force single instance execution</td>
+          </tr>
+          <tr>
+            <td>parallel_instance_group</td>
+            <td>null</td>
+            <td>null</td>
+            <td>instance group to use for all parallel operations</td>
+          </tr>
+          <tr>
+            <td>parallel_io_cap_enabled</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>enable capping DOP by IO bandwidth</td>
+          </tr>
+          <tr>
+            <td>parallel_max_servers</td>
+            <td>960</td>
+            <td>960</td>
+            <td>maximum parallel query servers per instance</td>
+          </tr>
+          <tr>
+            <td>parallel_min_percent</td>
+            <td>0</td>
+            <td>0</td>
+            <td>minimum percent of threads required for parallel query</td>
+          </tr>
+          <tr>
+            <td>parallel_min_servers</td>
+            <td>0</td>
+            <td>0</td>
+            <td>minimum parallel query servers per instance</td>
+          </tr>
+          <tr>
+            <td>parallel_min_time_threshold</td>
+            <td>AUTO</td>
+            <td>AUTO</td>
+            <td>threshold above which a plan is a candidate for parallelization (in seconds)</td>
+          </tr>
+          <tr>
+            <td>parallel_server</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>if TRUE startup in parallel server mode</td>
+          </tr>
+          <tr>
+            <td>parallel_server_instances</td>
+            <td>1</td>
+            <td>1</td>
+            <td>number of instances to use for sizing OPS SGA structures</td>
+          </tr>
+          <tr>
+            <td>parallel_servers_target</td>
+            <td>384</td>
+            <td>384</td>
+            <td>instance target in terms of number of parallel servers</td>
+          </tr>
+          <tr>
+            <td>parallel_threads_per_cpu</td>
+            <td>2</td>
+            <td>2</td>
+            <td>number of parallel execution threads per CPU</td>
+          </tr>
+          <tr>
+            <td>permit_92_wrap_format</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>allow 9.2 or older wrap format in PL/SQL</td>
+          </tr>
+          <tr>
+            <td>pga_aggregate_target</td>
+            <td>86676340736</td>
+            <td>82661M</td>
+            <td>Target size for the aggregate PGA memory consumed by the instance</td>
+          </tr>
+          <tr>
+            <td>plscope_settings</td>
+            <td>IDENTIFIERS:NONE</td>
+            <td>IDENTIFIERS:NONE</td>
+            <td>plscope_settings controls the compile time collection, cross reference, and storage of PL/SQL source code identifier data</td>
+          </tr>
+          <tr>
+            <td>plsql_ccflags</td>
+            <td>null</td>
+            <td>null</td>
+            <td>PL/SQL ccflags</td>
+          </tr>
+          <tr>
+            <td>plsql_code_type</td>
+            <td>INTERPRETED</td>
+            <td>INTERPRETED</td>
+            <td>PL/SQL code-type</td>
+          </tr>
+          <tr>
+            <td>plsql_debug</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>PL/SQL debug</td>
+          </tr>
+          <tr>
+            <td>plsql_optimize_level</td>
+            <td>2</td>
+            <td>2</td>
+            <td>PL/SQL optimize level</td>
+          </tr>
+          <tr>
+            <td>plsql_v2_compatibility</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>PL/SQL version 2.x compatibility flag</td>
+          </tr>
+          <tr>
+            <td>plsql_warnings</td>
+            <td>DISABLE:ALL</td>
+            <td>DISABLE:ALL</td>
+            <td>PL/SQL compiler warnings settings</td>
+          </tr>
+          <tr>
+            <td>pre_page_sga</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>pre-page sga for process</td>
+          </tr>
+          <tr>
+            <td>processes</td>
+            <td>1000</td>
+            <td>1000</td>
+            <td>user processes</td>
+          </tr>
+          <tr>
+            <td>processor_group_name</td>
+            <td>null</td>
+            <td>null</td>
+            <td>Name of the processor group that this instance should run in.</td>
+          </tr>
+          <tr>
+            <td>query_rewrite_enabled</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>allow rewrite of queries using materialized views if enabled</td>
+          </tr>
+          <tr>
+            <td>query_rewrite_integrity</td>
+            <td>enforced</td>
+            <td>enforced</td>
+            <td>perform rewrite using materialized views with desired integrity</td>
+          </tr>
+          <tr>
+            <td>rdbms_server_dn</td>
+            <td>null</td>
+            <td>null</td>
+            <td>RDBMS's Distinguished Name</td>
+          </tr>
+          <tr>
+            <td>read_only_open_delayed</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>if TRUE delay opening of read only files until first access</td>
+          </tr>
+          <tr>
+            <td>recovery_parallelism</td>
+            <td>0</td>
+            <td>0</td>
+            <td>number of server processes to use for parallel recovery</td>
+          </tr>
+          <tr>
+            <td>recyclebin</td>
+            <td>on</td>
+            <td>on</td>
+            <td>recyclebin processing</td>
+          </tr>
+          <tr>
+            <td>redo_transport_user</td>
+            <td>null</td>
+            <td>null</td>
+            <td>Data Guard transport user when using password file</td>
+          </tr>
+          <tr>
+            <td>remote_dependencies_mode</td>
+            <td>TIMESTAMP</td>
+            <td>TIMESTAMP</td>
+            <td>remote-procedure-call dependencies mode parameter</td>
+          </tr>
+          <tr>
+            <td>remote_listener</td>
+            <td>null</td>
+            <td>null</td>
+            <td>remote listener</td>
+          </tr>
+          <tr>
+            <td>remote_login_passwordfile</td>
+            <td>EXCLUSIVE</td>
+            <td>EXCLUSIVE</td>
+            <td>password file usage parameter</td>
+          </tr>
+          <tr>
+            <td>remote_os_authent</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>allow non-secure remote clients to use auto-logon accounts</td>
+          </tr>
+          <tr>
+            <td>remote_os_roles</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>allow non-secure remote clients to use os roles</td>
+          </tr>
+          <tr>
+            <td>replication_dependency_tracking</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>tracking dependency for Replication parallel propagation</td>
+          </tr>
+          <tr>
+            <td>resource_limit</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>master switch for resource limit</td>
+          </tr>
+          <tr>
+            <td>resource_manager_cpu_allocation</td>
+            <td>48</td>
+            <td>48</td>
+            <td>Resource Manager CPU allocation</td>
+          </tr>
+          <tr>
+            <td>resource_manager_plan</td>
+            <td>null</td>
+            <td>null</td>
+            <td>resource mgr top plan</td>
+          </tr>
+          <tr>
+            <td>result_cache_max_result</td>
+            <td>5</td>
+            <td>5</td>
+            <td>maximum result size as percent of cache size</td>
+          </tr>
+          <tr>
+            <td>result_cache_max_size</td>
+            <td>1073741824</td>
+            <td>1G</td>
+            <td>maximum amount of memory to be used by the cache</td>
+          </tr>
+          <tr>
+            <td>result_cache_mode</td>
+            <td>MANUAL</td>
+            <td>MANUAL</td>
+            <td>result cache operator usage mode</td>
+          </tr>
+          <tr>
+            <td>result_cache_remote_expiration</td>
+            <td>0</td>
+            <td>0</td>
+            <td>maximum life time (min) for any result using a remote object</td>
+          </tr>
+          <tr>
+            <td>resumable_timeout</td>
+            <td>0</td>
+            <td>0</td>
+            <td>set resumable_timeout</td>
+          </tr>
+          <tr>
+            <td>rollback_segments</td>
+            <td>null</td>
+            <td>null</td>
+            <td>undo segment list</td>
+          </tr>
+          <tr>
+            <td>sec_case_sensitive_logon</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>case sensitive password enabled for logon</td>
+          </tr>
+          <tr>
+            <td>sec_max_failed_login_attempts</td>
+            <td>10</td>
+            <td>10</td>
+            <td>maximum number of failed login attempts on a connection</td>
+          </tr>
+          <tr>
+            <td>sec_protocol_error_further_action</td>
+            <td>CONTINUE</td>
+            <td>CONTINUE</td>
+            <td>TTC protocol error continue action</td>
+          </tr>
+          <tr>
+            <td>sec_protocol_error_trace_action</td>
+            <td>TRACE</td>
+            <td>TRACE</td>
+            <td>TTC protocol error action</td>
+          </tr>
+          <tr>
+            <td>sec_return_server_release_banner</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>whether the server retruns the complete version information</td>
+          </tr>
+          <tr>
+            <td>serial_reuse</td>
+            <td>disable</td>
+            <td>disable</td>
+            <td>reuse the frame segments</td>
+          </tr>
+          <tr>
+            <td>service_names</td>
+            <td>ora11g</td>
+            <td>ora11g</td>
+            <td>service names supported by the instance</td>
+          </tr>
+          <tr>
+            <td>session_cached_cursors</td>
+            <td>50</td>
+            <td>50</td>
+            <td>Number of cursors to cache in a session.</td>
+          </tr>
+          <tr>
+            <td>session_max_open_files</td>
+            <td>10</td>
+            <td>10</td>
+            <td>maximum number of open files allowed per session</td>
+          </tr>
+          <tr>
+            <td>sessions</td>
+            <td>1536</td>
+            <td>1536</td>
+            <td>user and system sessions</td>
+          </tr>
+          <tr>
+            <td>sga_max_size</td>
+            <td>170724950016</td>
+            <td>159G</td>
+            <td>max total SGA size</td>
+          </tr>
+          <tr>
+            <td>sga_target</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Target size of SGA</td>
+          </tr>
+          <tr>
+            <td>shadow_core_dump</td>
+            <td>partial</td>
+            <td>partial</td>
+            <td>Core Size for Shadow Processes</td>
+          </tr>
+          <tr>
+            <td>shared_memory_address</td>
+            <td>0</td>
+            <td>0</td>
+            <td>SGA starting address (low order 32-bits on 64-bit platforms)</td>
+          </tr>
+          <tr>
+            <td>shared_pool_reserved_size</td>
+            <td>241591910</td>
+            <td>241591910</td>
+            <td>size in bytes of reserved area of shared pool</td>
+          </tr>
+          <tr>
+            <td>shared_pool_size</td>
+            <td>7516192768</td>
+            <td>7G</td>
+            <td>size in bytes of shared pool</td>
+          </tr>
+          <tr>
+            <td>shared_server_sessions</td>
+            <td>null</td>
+            <td>null</td>
+            <td>max number of shared server sessions</td>
+          </tr>
+          <tr>
+            <td>shared_servers</td>
+            <td>0</td>
+            <td>0</td>
+            <td>number of shared servers to start up</td>
+          </tr>
+          <tr>
+            <td>skip_unusable_indexes</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>skip unusable indexes if set to TRUE</td>
+          </tr>
+          <tr>
+            <td>smtp_out_server</td>
+            <td>null</td>
+            <td>null</td>
+            <td>utl_smtp server and port configuration parameter</td>
+          </tr>
+          <tr>
+            <td>sort_area_retained_size</td>
+            <td>0</td>
+            <td>0</td>
+            <td>size of in-memory sort work area retained between fetch calls</td>
+          </tr>
+          <tr>
+            <td>sort_area_size</td>
+            <td>65536</td>
+            <td>65536</td>
+            <td>size of in-memory sort work area</td>
+          </tr>
+          <tr>
+            <td>spfile</td>
+            <td>/oracle/ora11/product/dbs/spfileora11g.ora</td>
+            <td>/oracle/ora11/product/dbs/spfileora11g.ora</td>
+            <td>server parameter file</td>
+          </tr>
+          <tr>
+            <td>sql92_security</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>require select privilege for searched update/delete</td>
+          </tr>
+          <tr>
+            <td>sql_trace</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>enable SQL trace</td>
+          </tr>
+          <tr>
+            <td>sqltune_category</td>
+            <td>DEFAULT</td>
+            <td>DEFAULT</td>
+            <td>Category qualifier for applying hintsets</td>
+          </tr>
+          <tr>
+            <td>standby_archive_dest</td>
+            <td>?/dbs/arch</td>
+            <td>?/dbs/arch</td>
+            <td>standby database archivelog destination text string</td>
+          </tr>
+          <tr>
+            <td>standby_file_management</td>
+            <td>MANUAL</td>
+            <td>MANUAL</td>
+            <td>if auto then files are created/dropped automatically on standby</td>
+          </tr>
+          <tr>
+            <td>star_transformation_enabled</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>enable the use of star transformation</td>
+          </tr>
+          <tr>
+            <td>statistics_level</td>
+            <td>TYPICAL</td>
+            <td>TYPICAL</td>
+            <td>statistics level</td>
+          </tr>
+          <tr>
+            <td>streams_pool_size</td>
+            <td>0</td>
+            <td>0</td>
+            <td>size in bytes of the streams pool</td>
+          </tr>
+          <tr>
+            <td>tape_asynch_io</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>Use asynch I/O requests for tape devices</td>
+          </tr>
+          <tr>
+            <td>thread</td>
+            <td>0</td>
+            <td>0</td>
+            <td>Redo thread to mount</td>
+          </tr>
+          <tr>
+            <td>timed_os_statistics</td>
+            <td>0</td>
+            <td>0</td>
+            <td>internal os statistic gathering interval in seconds</td>
+          </tr>
+          <tr>
+            <td>timed_statistics</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>maintain internal timing statistics</td>
+          </tr>
+          <tr>
+            <td>trace_enabled</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>enable in memory tracing</td>
+          </tr>
+          <tr>
+            <td>tracefile_identifier</td>
+            <td>null</td>
+            <td>null</td>
+            <td>trace file custom identifier</td>
+          </tr>
+          <tr>
+            <td>transactions</td>
+            <td>1689</td>
+            <td>1689</td>
+            <td>max. number of concurrent active transactions</td>
+          </tr>
+          <tr>
+            <td>transactions_per_rollback_segment</td>
+            <td>5</td>
+            <td>5</td>
+            <td>number of active transactions per rollback segment</td>
+          </tr>
+          <tr>
+            <td>undo_management</td>
+            <td>AUTO</td>
+            <td>AUTO</td>
+            <td>instance runs in SMU mode if TRUE, else in RBU mode</td>
+          </tr>
+          <tr>
+            <td>undo_retention</td>
+            <td>900</td>
+            <td>900</td>
+            <td>undo retention in seconds</td>
+          </tr>
+          <tr>
+            <td>undo_tablespace</td>
+            <td>UNDOTBS1</td>
+            <td>UNDOTBS1</td>
+            <td>use/switch undo tablespace</td>
+          </tr>
+          <tr>
+            <td>use_indirect_data_buffers</td>
+            <td>FALSE</td>
+            <td>FALSE</td>
+            <td>Enable indirect data buffers (very large SGA on 32-bit platforms)</td>
+          </tr>
+          <tr>
+            <td>use_large_pages</td>
+            <td>TRUE</td>
+            <td>TRUE</td>
+            <td>Use large pages if available (TRUE/FALSE/ONLY)</td>
+          </tr>
+          <tr>
+            <td>user_dump_dest</td>
+            <td>/oracle/ora11/diag/rdbms/ora11g/ora11g/trace</td>
+            <td>/oracle/ora11/diag/rdbms/ora11g/ora11g/trace</td>
+            <td>User process dump directory</td>
+          </tr>
+          <tr>
+            <td>utl_file_dir</td>
+            <td>null</td>
+            <td>null</td>
+            <td>utl_file accessible directories list</td>
+          </tr>
+          <tr>
+            <td>workarea_size_policy</td>
+            <td>AUTO</td>
+            <td>AUTO</td>
+            <td>policy used to size SQL working areas (MANUAL/AUTO)</td>
+          </tr>
+          <tr>
+            <td>xml_db_events</td>
+            <td>enable</td>
+            <td>enable</td>
+            <td>are XML DB events enabled</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

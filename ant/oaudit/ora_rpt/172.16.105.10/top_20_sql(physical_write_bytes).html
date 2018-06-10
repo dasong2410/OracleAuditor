@@ -1,0 +1,231 @@
+<html>
+  <head>
+    <meta http-equiv='content-type' content='text/html; charset=utf-8'>
+    <meta charset='utf-8'>
+    <meta name='robots' content='all'>
+    <meta name='author' content='w3school.com.cn'>
+    <link rel='stylesheet' type='text/css' href='../css/c5.css'>
+    <title>
+Top 20 sql(physical write bytes)&nbsp;&nbsp;&nbsp;&nbsp;[物理写最多的前20个sql]
+    </title>
+  </head>
+  <body class='html' id='tags'>
+    <div>
+      <h2>
+Top 20 sql(physical write bytes)&nbsp;&nbsp;&nbsp;&nbsp;[物理写最多的前20个sql]
+      </h2>
+      <table class='dataintable'>
+        <tbody>
+          <tr>
+            <th>SQL_ID</th>
+            <th>CHILD_NUMBER</th>
+            <th>PHYSICAL_WRITE_BYTES</th>
+            <th>EXECUTIONS</th>
+            <th>AVERAGE_WRITE_BYTES</th>
+            <th>PARSING_SCHEMA_NAME</th>
+            <th>SQL_FULLTEXT</th>
+          </tr>
+          <tr>
+            <td>gf2x211zdtxjj</td>
+            <td>1</td>
+            <td>6504448</td>
+            <td>656</td>
+            <td>9915</td>
+            <td>NBPF</td>
+            <td>insert into LOKI_CYCLE_TASK  (TASK_ID,TASK_NAME,REQUEST,TASK_TYPE,OPERATION_TYPE,PERIOD,FIXED_TIME,SUBTASKIDS,CREATE_TIME,UPDATE_TIME,BEGIN_TIME,LAST_TIME,RETRYTIMES,STATUS,PROGRESS,PRIORITY,RESULT,CALL_BACK_URL,LOCAL_MAC) values (:1,:2,:3,:4,:5,:6,:7,:8,:9,:10,:11,:12,:13,:14,:15,:16,:17,:18,:19)</td>
+          </tr>
+          <tr>
+            <td>8vuvp0nr8av00</td>
+            <td>0</td>
+            <td>5398528</td>
+            <td>13113</td>
+            <td>411</td>
+            <td>EVIDENCE</td>
+            <td>MERGE INTO MR_BASE_STATICINFO A USING (SELECT COLLECT_TARGET_ID, DECODE(MSISDN, NULL, 'UNKNOWN', MSISDN) MSISDN, 12 AS STAT_TYPE, COUNT(*) STAT_COUNT, (SYSDATE - TO_DATE('1970-01-01 08:00:00', 'yyyy-mm-dd hh24:mi:ss')) * 86400 AS INSERT_TIME FROM MR_BASE_SIM GROUP BY COLLECT_TARGET_ID,MSISDN) B ON (A.COLLECT_TARGET_ID = B.COLLECT_TARGET_ID AND A.PHONE_NUM = B.MSISDN AND A.STAT_TYPE = '12') WHEN NOT MATCHED THEN INSERT VALUES (B.COLLECT_TARGET_ID,B.MSISDN,B.STAT_TYPE,B.STAT_COUNT,B.INSERT_TIME) WHEN MATCHED THEN UPDATE SET A.STAT_COUNT = B.STAT_COUNT</td>
+          </tr>
+          <tr>
+            <td>73mu4swt41pwu</td>
+            <td>0</td>
+            <td>1277952</td>
+            <td>1</td>
+            <td>1277952</td>
+            <td>NBPF</td>
+            <td>create table base_iplibrarytab_netsite506 as
+select * from base_iplibrarytab_netsite
+</td>
+          </tr>
+          <tr>
+            <td>8tqa5a5puw005</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>NBDBN</td>
+            <td>LOCK TABLE "BASE_KEYWORD_SQLLDR" PARTITION ("PART_20170507") ,"BASE_KEYWORD_SQLLDR_TMP" IN EXCLUSIVE MODE  NOWAIT </td>
+          </tr>
+          <tr>
+            <td>ackwv1qvnw00d</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>insert into nbpf.iao_yh (fkfzh, fkfzjhm, fkfmc, skfzh, skfmc, skfzjhm, je, sj)
+values ('441901837707000026209', '44012119741016216X', '黄秋盛', '483900065157000045209', '林清丽', '350627198708030029', '1,000,000 ', '20140902tttttt')
+</td>
+          </tr>
+          <tr>
+            <td>c6f7a6qhjh00d</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>insert into nbpf.iao_yh (fkfzh, fkfzjhm, fkfmc, skfzh, skfmc, skfzjhm, je, sj)
+values ('6214857690704756', '441900197801154127', '梁宝仪', '6222023400015658239', '孙卓', '', '44,138 ', '20150519140046')
+</td>
+          </tr>
+          <tr>
+            <td>5g03bhh4uw00f</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>
+INSERT INTO BASE_ATTRIBUTE_INFO VALUES ('35662', '1026', '126��������', 0, '1271214', '1', 0, 0, 0)
+</td>
+          </tr>
+          <tr>
+            <td>367yb0t2d800n</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>insert into nbpf.iao_yh (fkfzh, fkfzjhm, fkfmc, skfzh, skfmc, skfzjhm, je, sj)
+values ('2010025101032048932', '441900780115412', '梁宝仪', '2000017448263', '林槐禄', '', '237,900 ', '20130520140004')
+</td>
+          </tr>
+          <tr>
+            <td>f4qxwzzgn800p</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>select H.JKSBBH JLBH,H.AZWZ SBWZ,H.KKBH QJWYBH,H.AZWZ KKDZ, H.SBGLDWMC SBGLDWMC,H.SBGLDWDM SBGLDWDM,H.SSBM DJDWMC,H.LXR LXR, H.LXDH LXDH,H.JKSBJD LON, H.JKSBWD LAT,  'shipin_single' ICONNAME   from HCZZ_ZAJKXX H where 1=1 and H.SBGLDWDM not like '32010017%' and H.JKSBJD >= 118.82663620102423 and H.JKSBJD <= 118.89551826752934 and H.JKSBWD >= 31.931933723393907 and H.JKSBWD <= 31.961102642138442 </td>
+          </tr>
+          <tr>
+            <td>c6fjn14v1800s</td>
+            <td>0</td>
+            <td>0</td>
+            <td>17</td>
+            <td>0</td>
+            <td>BIGDATA2015</td>
+            <td>SELECT /*+ DYNAMIC_SAMPLING(0) INDEX(i) */     TOKEN_FIRST,TOKEN_LAST,TOKEN_COUNT,ROWID     FROM "BIGDATA2015"."DR#IDX_DIM_KEYWORD10720$I" i     WHERE TOKEN_TEXT = :word AND TOKEN_TYPE = :wtype     ORDER BY TOKEN_TEXT, TOKEN_TYPE, TOKEN_FIRST</td>
+          </tr>
+          <tr>
+            <td>1q182tu0ps00v</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>insert into nbpf.iao_yh (fkfzh, fkfzjhm, fkfmc, skfzh, skfmc, skfzjhm, je, sj)
+values ('2010025501033984321', '440881198010034870', '徐日伟', '2010025301041056540', '徐济宽', '440881199504024810', '775,000 ', '20160623115629')
+</td>
+          </tr>
+          <tr>
+            <td>b32ub06pcc012</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>insert into nbpf.iao_yh (fkfzh, fkfzjhm, fkfmc, skfzh, skfmc, skfzjhm, je, sj)
+values ('2010025101026655518', '441900197702174114', '尹润新', '4000040519200087315', '深圳市财付通科技有限公司', '792584584', '350 ', '20170313160534')
+</td>
+          </tr>
+          <tr>
+            <td>ap0r1drr5w012</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>insert into nbpf.iao_yh (fkfzh, fkfzjhm, fkfmc, skfzh, skfmc, skfzjhm, je, sj)
+values ('631457298886', '350627198708030029', '林清丽', '738060657574', 'NAM HO PARK', 'M72877006', '365,400 ', '20131114tttttt')
+</td>
+          </tr>
+          <tr>
+            <td>ad75jckn08012</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT COUNT(DISTINCT(jobid)) FROM nb_job_use WHERE userid = 10000 AND createtime > 1491306652 AND flag != 1 ORDER BY createtime DESC</td>
+          </tr>
+          <tr>
+            <td>5rxzs1157h013</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>select H.JKSBBH JLBH,H.AZWZ SBWZ,H.KKBH QJWYBH,H.AZWZ KKDZ, H.SBGLDWMC SBGLDWMC,H.SBGLDWDM SBGLDWDM,H.SSBM DJDWMC,H.LXR LXR, H.LXDH LXDH,H.JKSBJD LON, H.JKSBWD LAT,  'shipin_single' ICONNAME   from HCZZ_ZAJKXX H where 1=1 and H.SBGLDWDM not like '32010017%' and H.JKSBJD >= 118.77828389321189 and H.JKSBJD <= 118.81272492646444 and H.JKSBWD >= 32.03774093766607 and H.JKSBWD <= 32.05230958716656 </td>
+          </tr>
+          <tr>
+            <td>d9hwr6758s016</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>NBDBN</td>
+            <td>LOCK TABLE "BASE_KEYWORD_SQLLDR" PARTITION ("PART_20170503") ,"BASE_KEYWORD_SQLLDR_TMP" IN EXCLUSIVE MODE  NOWAIT </td>
+          </tr>
+          <tr>
+            <td>ca4s0k2jqw019</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>NBMONITOR</td>
+            <td>insert into nb_monitor_statistics_temp(upareaid, protypedesc, DATASOURCE, object_id, rule_id, datadate, counts) (select upareaid, protypedesc, DATASOURCE, object_id, rule_id, datadate, counts from (select distinct upareaid, protypedesc, DATASOURCE, object_id, rule_id, to_char(sysdate, 'yyyymmdd') datadate, counts from (select upareaid, substr(application,4,3) protypedesc, DATA_SOURCE DATASOURCE, object_id, rule_id, count(*) Over(partition by upareaid, substr(application,4,3), DATA_SOURCE, object_id, rule_id) counts from NB_MONITOR_HOTEL where createtime > 1492801225 and createtime <= 1492804825)))</td>
+          </tr>
+          <tr>
+            <td>dd02xy7jxn019</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>INSERT INTO base_dd_tab_hc VALUES ('07390003', 'AJXZ', '过失损坏军事通信案', '', '', '130030', '案件性质', NULL, '2', '0', '20170407', NULL, '', 6384, NULL, 1)
+</td>
+          </tr>
+          <tr>
+            <td>bgnfjwv59801h</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>LOCK TABLE "TRACE_REQUEST_STAT" PARTITION ("SYS_P4042")  IN EXCLUSIVE MODE  NOWAIT </td>
+          </tr>
+          <tr>
+            <td>bu0mu7nbpw01h</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>insert into nbpf.iao_yh (fkfzh, fkfzjhm, fkfmc, skfzh, skfmc, skfzjhm, je, sj)
+values ('6228480608221508179', '441900197702174114', '尹润新', '6228430120028102215', '周明乐', '440301197811267515', '900,000 ', '20150929155819')
+</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

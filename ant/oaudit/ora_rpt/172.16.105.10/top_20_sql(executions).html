@@ -1,0 +1,217 @@
+<html>
+  <head>
+    <meta http-equiv='content-type' content='text/html; charset=utf-8'>
+    <meta charset='utf-8'>
+    <meta name='robots' content='all'>
+    <meta name='author' content='w3school.com.cn'>
+    <link rel='stylesheet' type='text/css' href='../css/c5.css'>
+    <title>
+Top 20 sql(executions)&nbsp;&nbsp;&nbsp;&nbsp;[执行次数最多的20个sql]
+    </title>
+  </head>
+  <body class='html' id='tags'>
+    <div>
+      <h2>
+Top 20 sql(executions)&nbsp;&nbsp;&nbsp;&nbsp;[执行次数最多的20个sql]
+      </h2>
+      <table class='dataintable'>
+        <tbody>
+          <tr>
+            <th>SQL_ID</th>
+            <th>CHILD_NUMBER</th>
+            <th>ELAPSED_TIME(s)</th>
+            <th>EXECUTIONS</th>
+            <th>PARSING_SCHEMA_NAME</th>
+            <th>SQL_FULLTEXT</th>
+          </tr>
+          <tr>
+            <td>bh7v2mqncg0u6</td>
+            <td>0</td>
+            <td>97274</td>
+            <td>3111844759</td>
+            <td>KEYWORD</td>
+            <td>SELECT A.KEYID,A.KEYNAME,A.USED,A.PROTYPE FROM TIMEQUERYKEYTABLE A WHERE A.USED IN (3,5) AND ROWNUM<1000</td>
+          </tr>
+          <tr>
+            <td>401rty2nncsy8</td>
+            <td>0</td>
+            <td>886</td>
+            <td>11052621</td>
+            <td>FHNSDB</td>
+            <td>SELECT A.CLUEID,A.EXTEND_TYPE,A.BEGINTIME,A.ENDTIME FROM CLUE_EXTEND A WHERE A.EXTEND_STATE='1'  AND ROWNUM <= '10'</td>
+          </tr>
+          <tr>
+            <td>b84m4kj0vgsc1</td>
+            <td>0</td>
+            <td>515</td>
+            <td>11016851</td>
+            <td>FHNSDB</td>
+            <td>SELECT A.OBJECTID,A.CLUETYPE,A.CLUENAME FROM CLUETABLE A WHERE A.CLUEID='165'</td>
+          </tr>
+          <tr>
+            <td>b6tnbjncuqng1</td>
+            <td>0</td>
+            <td>479</td>
+            <td>11012045</td>
+            <td>FHNSDB</td>
+            <td>SELECT IMTYPE,IMID FROM CLUEIMTABLE A WHERE A.CLUEID='165'</td>
+          </tr>
+          <tr>
+            <td>0zas11sqj4ajw</td>
+            <td>0</td>
+            <td>455</td>
+            <td>1211751</td>
+            <td>FHNSDB</td>
+            <td>select SYSDATE+1/43200  from dual</td>
+          </tr>
+          <tr>
+            <td>231qv0rmmfdbq</td>
+            <td>0</td>
+            <td>607</td>
+            <td>606487</td>
+            <td>FHNSDB</td>
+            <td>SET CONSTRAINTS ALL DEFERRED</td>
+          </tr>
+          <tr>
+            <td>3vjxpmhhzngu4</td>
+            <td>0</td>
+            <td>82</td>
+            <td>458038</td>
+            <td>NBPF_SQ</td>
+            <td>SELECT * FROM dual</td>
+          </tr>
+          <tr>
+            <td>7v27twb71d0az</td>
+            <td>0</td>
+            <td>292</td>
+            <td>303427</td>
+            <td>FHNSDB</td>
+            <td> delete from "FHNSDB"."EMP_CASE_LIST_INFO"</td>
+          </tr>
+          <tr>
+            <td>dr84dxxwhbgd8</td>
+            <td>0</td>
+            <td>30</td>
+            <td>303085</td>
+            <td>KEYWORD</td>
+            <td> delete from "KEYWORD"."EMP_KEYWORD_LIST_INFO"</td>
+          </tr>
+          <tr>
+            <td>cyab341pttb1g</td>
+            <td>0</td>
+            <td>170</td>
+            <td>302885</td>
+            <td>KEYWORD</td>
+            <td>INSERT /*+ BYPASS_RECURSIVE_CHECK */ INTO "KEYWORD"."EMP_KEYWORD_LIST_INFO" with t1 as (select L1.keyname,L1.used,L1.classid,L1.keyid,L1.issave,L1.searchflag,NVL(L1.totalcnt, 0) AS totalcnt1,L1.userid,NVL(L1.archivednum, 0) AS archivednum,L1.starttime,L1.endtime,L1.updatetime,L1.remark,NVL(L1.readednum, 0) as readednum from timequerykeytable L1),
+t2 as (SELECT L2.describe,L2.classid FROM base_sensitive_type L2,t1 group by (L2.describe,L2.classid)),
+t3 as (SELECT L3.keyid,sum((NVL(L3.TOTALCNT, 0) - NVL(L3.deletednum, 0))) as todaycnt FROM timequerycounttable L3 where L3.datadate = to_char(TRUNC(SYSDATE),'yyyymmdd') group by L3.keyid),
+t4 as (select t1.keyname,t1.used,t1.classid,t1.keyid,t1.issave,t1.searchflag,t1.totalcnt1,t1.userid,t1.archivednum,t1.starttime,t1.endtime,t1.updatetime,t1.remark,t1.readednum,t2.describe from t1 left join t2 on t1.classid = t2.classid),
+t5 as (select t4.keyname,t4.used,t4.classid,t4.keyid,t4.issave,t4.searchflag,t4.totalcnt1,t4.userid,t4.archivednum,t4.starttime,t4.endtime,t4.updatetime,t4.remark,t4.readednum,t4.describe,NVL(t3.todaycnt,0) as todaycnt from t4 left join t3 on t4.keyid = t3.keyid)
+select t5.* from t5</td>
+          </tr>
+          <tr>
+            <td>2haaf1r09ay1w</td>
+            <td>0</td>
+            <td>540</td>
+            <td>288110</td>
+            <td>FHNSDB</td>
+            <td>INSERT /*+ BYPASS_RECURSIVE_CHECK */ INTO "FHNSDB"."EMP_CASE_LIST_INFO" with t1 as
+ (select t7.caseid,
+         sum(nvl(t2.DataCount, 0)) DATACOUNTSUM,
+         sum(nvl(t2.DataCount, 0) - nvl(t2.prodatacount, 0)) UNDEALSUM,
+         COUNT(t2.clueid) clueSum
+    from cluetable t2, caseobjecttable t3, casetable t7
+   where t2.objectid(+) = t3.objectid and t3.caseid(+) = t7.caseid
+   group by t7.caseid),
+t2 as
+ (select tt.caseid, count(tt.objectid) objectSum from caseobjecttable tt group by tt.caseid),
+t3 as
+ (select t1.caseid, t1.DATACOUNTSUM, t1.UNDEALSUM, t1.clueSum, nvl(t2.objectsum, 0) objectsum from t1
+    left join t2 on t1.caseid = t2.caseid),
+t4 as
+ (select t3.caseid, t3.DATACOUNTSUM, t3.UNDEALSUM, t3.clueSum, t3.objectsum,
+         tt.casename, tt.casenum, tt.casestatus, tt.classid, tt.typeid, tt.formunit,
+         tt.formdate, tt.formpeople, tt.case_no, tt.flag, tt.sendapproval, tt.createtime from t3
+    left join casetable tt on t3.caseid = tt.caseid)
+select t4.caseid, t4.DATACOUNTSUM, t4.UNDEALSUM, t4.clueSum, t4.objectsum, t4.casename,
+       t4.casenum, t4.casestatus, t4.classid, t4.typeid, t4.formunit, t4.formdate,
+       t4.formpeople, t4.case_no, t4.flag, t4.sendapproval, t4.createtime from t4</td>
+          </tr>
+          <tr>
+            <td>f7fypzx3h0ma6</td>
+            <td>0</td>
+            <td>40</td>
+            <td>284402</td>
+            <td>NBPF</td>
+            <td>SELECT T.TASKID,T.TASKNAME,T.CASEID,T.FOLLOWTYPE,T.STATUS,T.RESULTNUM,T.CREATETIME,T.FINISHTIME,T.STARTTIME,T.ENDTIME,T.ISFOREVER,T.RESULTTAB,T.TRACKTAB,T.CRASHTHRESHOLD,T.CRASHCATEGORY,T.AREARELATE,T.FORMULA,T.EXTTIME,T.TASKMODE,T.DATASOURCE,T.WORKFLOWID, T.USERID,T.ISREAD,T.PARENTTASKID FROM NB_TASKTAB T WHERE 1=1 AND T.TASKID = :1</td>
+          </tr>
+          <tr>
+            <td>d9k1bc8cyuwkt</td>
+            <td>0</td>
+            <td>16</td>
+            <td>196458</td>
+            <td>FHNSDB</td>
+            <td>SELECT A.OBJECTID,A.CITYCODE,A.CLUEID,A.CLUESTATE,A.CLUETYPE,A.CLUEVALUE,A.STARTTIME,A.ENDTIME,A.DATASOURCE FROM CLUE_MATCH A WHERE A.CLUESTATE IN (1,4)</td>
+          </tr>
+          <tr>
+            <td>c70pztbz0t12n</td>
+            <td>0</td>
+            <td>48</td>
+            <td>182159</td>
+            <td>NBPF</td>
+            <td>SELECT id, name, cn_name, title, update_info, attachment1_filename, attachment1, attachment2_filename, attachment2, attachment3_filename, attachment3, updatetime, status, send_notice_time FROM nb_module_update_notice WHERE status = 0</td>
+          </tr>
+          <tr>
+            <td>aj1pa6p3bu1fy</td>
+            <td>1</td>
+            <td>129</td>
+            <td>128296</td>
+            <td>NBPF</td>
+            <td>SELECT COUNT(1) FROM NB_TASKTAB T WHERE T.ISREAD=1</td>
+          </tr>
+          <tr>
+            <td>a1x5ydyv81uzu</td>
+            <td>2</td>
+            <td>76</td>
+            <td>104376</td>
+            <td>NBPF</td>
+            <td>SELECT COUNT(1) FROM (SELECT T.TASKID,T.TASKNAME,T.CASEID,T.FOLLOWTYPE,T.STATUS,T.RESULTNUM,T.CREATETIME,T.FINISHTIME,T.STARTTIME,T.ENDTIME,T.ISFOREVER,T.RESULTTAB,T.TRACKTAB,T.CRASHTHRESHOLD,T.CRASHCATEGORY,T.AREARELATE,T.FORMULA,T.EXTTIME,T.TASKMODE,T.DATASOURCE,T.WORKFLOWID,T.USERID,T.ISREAD,T.PARENTTASKID FROM NB_TASKTAB T WHERE 1=1  AND T.CASEID = :1  AND T.USERID=:2  AND T.AREARELATE != '0' )</td>
+          </tr>
+          <tr>
+            <td>8krt1jyf6uztu</td>
+            <td>0</td>
+            <td>238</td>
+            <td>99105</td>
+            <td>NBPF_YF</td>
+            <td>SELECT PARTITIONED FROM USER_TABLES WHERE TABLE_NAME=:B1 </td>
+          </tr>
+          <tr>
+            <td>8hrqkwqgpmru8</td>
+            <td>0</td>
+            <td>10</td>
+            <td>93482</td>
+            <td>FHNSDB</td>
+            <td>SELECT A.CLUEID,A.CLUETYPE,B.CITY_CODE,A.OBJECTID FROM CLUETABLE A LEFT JOIN CLUE_CITY B ON A.CLUEID=B.CLUEID WHERE B.CLUEID IS NULL AND A.CLUESTATE='64' AND A.RULETOOLTYPE='1' AND ROWNUM<=1000</td>
+          </tr>
+          <tr>
+            <td>avc1jqzz04wpr</td>
+            <td>0</td>
+            <td>9</td>
+            <td>91823</td>
+            <td>NBPF</td>
+            <td>SELECT 'x' FROM DUAL</td>
+          </tr>
+          <tr>
+            <td>cf06fwacdmgfk</td>
+            <td>0</td>
+            <td>5</td>
+            <td>87266</td>
+            <td>NBPF</td>
+            <td>select 'x' from dual
+</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

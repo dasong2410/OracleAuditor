@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqls>
+  <sql title="Table access full" desc="全表扫描"><![CDATA[
+select a.sql_id, a.child_number, a.object_owner, a.object_name, b.sql_fulltext
+  from (select sql_id, child_number, operation || ' ' || options operation, object_owner, object_name
+          from v$sql_plan
+         where operation || ' ' || options='TABLE ACCESS FULL'
+           and object_owner not in('SYS', 'SYSTEM')) a, v$sql b
+ where a.sql_id=b.sql_id
+   and a.child_number=b.child_number
+   and lower(b.sql_fulltext) not like '% samplesub'
+   and lower(b.sql_fulltext) not like '%sys.%'
+   and lower(b.sql_fulltext) not like 'declare job binary_integer%'
+   and lower(b.sql_fulltext) not like '%:"sys_b%'
+   and b.parsing_schema_name in(select username from dba_users where account_status='OPEN' and username not in('SYS', 'SYSTEM'))
+   and b.sql_fulltext not like '%OracleAuditor_Marcus_Mao%'
+   and 'OracleAuditor'!='OracleAuditor_Marcus_Mao'
+ order by a.object_owner, a.object_name, a.sql_id, a.child_number
+  ]]></sql>
+
+  <sql title="Index skip scan" desc="索引跳扫"><![CDATA[
+select a.sql_id, a.child_number, a.object_owner, a.object_name, b.sql_fulltext
+  from (select sql_id, child_number, operation || ' ' || options operation, object_owner, object_name
+          from v$sql_plan
+         where operation || ' ' || options='INDEX SKIP SCAN'
+           and object_owner not in('SYS', 'SYSTEM')) a, v$sql b
+ where a.sql_id=b.sql_id
+   and a.child_number=b.child_number
+   and lower(b.sql_fulltext) not like '% samplesub'
+   and lower(b.sql_fulltext) not like '%sys.%'
+   and lower(b.sql_fulltext) not like 'declare job binary_integer%'
+   and lower(b.sql_fulltext) not like '%:"sys_b%'
+   and b.parsing_schema_name in(select username from dba_users where account_status='OPEN' and username not in('SYS', 'SYSTEM'))
+   and b.sql_fulltext not like '%OracleAuditor_Marcus_Mao%'
+   and 'OracleAuditor'!='OracleAuditor_Marcus_Mao'
+ order by a.object_owner, a.object_name, a.sql_id, a.child_number
+  ]]></sql>
+
+  <sql title="Index full scan" desc="索引全扫"><![CDATA[
+select a.sql_id, a.child_number, a.object_owner, a.object_name, b.sql_fulltext
+  from (select sql_id, child_number, operation || ' ' || options operation, object_owner, object_name
+          from v$sql_plan
+         where operation || ' ' || options='INDEX FULL SCAN'
+           and object_owner not in('SYS', 'SYSTEM')) a, v$sql b
+ where a.sql_id=b.sql_id
+   and a.child_number=b.child_number
+   and lower(b.sql_fulltext) not like '% samplesub'
+   and lower(b.sql_fulltext) not like '%sys.%'
+   and lower(b.sql_fulltext) not like 'declare job binary_integer%'
+   and lower(b.sql_fulltext) not like '%:"sys_b%'
+   and b.parsing_schema_name in(select username from dba_users where account_status='OPEN' and username not in('SYS', 'SYSTEM'))
+   and b.sql_fulltext not like '%OracleAuditor_Marcus_Mao%'
+   and 'OracleAuditor'!='OracleAuditor_Marcus_Mao'
+ order by a.object_owner, a.object_name, a.sql_id, a.child_number
+  ]]></sql>
+
+  <sql title="4s sql" desc="平均执行时间>=4s的sql"><![CDATA[
+select sql_id, child_number, elapsed_time "ELAPSED_TIME(s)", executions, average_elapsed_time "AVERAGE_ELAPSED_TIME(s)", parsing_schema_name, sql_fulltext
+  from (select sql_id, child_number, trunc(elapsed_time/1000000) elapsed_time, executions, parsing_schema_name,
+               trunc(elapsed_time/decode(executions, 0, 1, executions)/1000000) average_elapsed_time,
+               sql_fulltext
+          from v$sql
+         where parsing_schema_name in(select username from dba_users where account_status='OPEN' and username not in('SYS', 'SYSTEM'))
+           and sql_fulltext not like '%OracleAuditor_Marcus_Mao%'
+           and 'OracleAuditor'!='OracleAuditor_Marcus_Mao'
+           and lower(sql_fulltext) not like '% samplesub'
+           and lower(sql_fulltext) not like '%sys.%'
+           and lower(sql_fulltext) not like 'declare job binary_integer%'
+           and lower(sql_fulltext) not like '%:"sys_b%')
+ where average_elapsed_time>=4
+ order by average_elapsed_time desc
+  ]]></sql>
+
+  <sql title="Top 20 sql(elapsed time)" desc="执行时间最长的20个sql"><![CDATA[
+select sql_id, child_number, elapsed_time "ELAPSED_TIME(s)", executions, trunc(elapsed_time/decode(executions, 0, 1, executions)/1000000) average_elapsed_time,
+       parsing_schema_name, sql_fulltext
+  from (select sql_id, child_number, trunc(elapsed_time/1000000) elapsed_time, executions, parsing_schema_name, sql_fulltext
+          from v$sql
+         where parsing_schema_name in(select username from dba_users where account_status='OPEN' and username not in('SYS', 'SYSTEM'))
+           and sql_fulltext not like '%OracleAuditor_Marcus_Mao%'
+           and 'OracleAuditor'!='OracleAuditor_Marcus_Mao'
+           and lower(sql_fulltext) not like '% samplesub'
+           and lower(sql_fulltext) not like '%sys.%'
+           and lower(sql_fulltext) not like 'declare job binary_integer%'
+           and lower(sql_fulltext) not like '%:"sys_b%'
+         order by elapsed_time desc)
+ where rownum<=20
+  ]]></sql>
+
+  <sql title="Top 20 sql(executions)" desc="执行次数最多的20个sql"><![CDATA[
+select sql_id, child_number, elapsed_time "ELAPSED_TIME(s)", executions, parsing_schema_name, sql_fulltext
+  from (select sql_id, child_number, trunc(elapsed_time/1000000) elapsed_time, executions, parsing_schema_name, sql_fulltext
+          from v$sql
+         where parsing_schema_name in(select username from dba_users where account_status='OPEN' and username not in('SYS', 'SYSTEM'))
+           and sql_fulltext not like '%OracleAuditor_Marcus_Mao%'
+           and 'OracleAuditor'!='OracleAuditor_Marcus_Mao'
+           and lower(sql_fulltext) not like '% samplesub'
+           and lower(sql_fulltext) not like '%sys.%'
+           and lower(sql_fulltext) not like 'declare job binary_integer%'
+           and lower(sql_fulltext) not like '%:"sys_b%'
+         order by executions desc)
+ where rownum<=20
+  ]]></sql>
+
+  <sql title="Top 20 sql(physical read bytes)" desc="物理读最多的前20个sql"><![CDATA[
+select sql_id, child_number, physical_read_bytes, executions, trunc(physical_read_bytes/decode(executions, 0, 1, executions)) average_read_bytes,
+       parsing_schema_name, sql_fulltext
+  from (select sql_id, child_number, physical_read_bytes, executions, parsing_schema_name, sql_fulltext
+          from v$sql
+         where parsing_schema_name in(select username from dba_users where account_status='OPEN' and username not in('SYS', 'SYSTEM'))
+           and sql_fulltext not like '%OracleAuditor_Marcus_Mao%'
+           and 'OracleAuditor'!='OracleAuditor_Marcus_Mao'
+           and lower(sql_fulltext) not like '% samplesub'
+           and lower(sql_fulltext) not like '%sys.%'
+           and lower(sql_fulltext) not like 'declare job binary_integer%'
+           and lower(sql_fulltext) not like '%:"sys_b%'
+         order by physical_read_bytes desc)
+ where rownum<=20
+  ]]></sql>
+
+  <sql title="Top 20 sql(physical write bytes)" desc="物理写最多的前20个sql"><![CDATA[
+select sql_id, child_number, physical_write_bytes, executions, trunc(physical_write_bytes/decode(executions, 0, 1, executions)) average_write_bytes,
+       parsing_schema_name, sql_fulltext
+  from (select sql_id, child_number, physical_write_bytes, executions, parsing_schema_name, sql_fulltext
+          from v$sql
+         where parsing_schema_name in(select username from dba_users where account_status='OPEN' and username not in('SYS', 'SYSTEM'))
+           and sql_fulltext not like '%OracleAuditor_Marcus_Mao%'
+           and 'OracleAuditor'!='OracleAuditor_Marcus_Mao'
+           and lower(sql_fulltext) not like '% samplesub'
+           and lower(sql_fulltext) not like '%sys.%'
+           and lower(sql_fulltext) not like 'declare job binary_integer%'
+           and lower(sql_fulltext) not like '%:"sys_b%'
+         order by physical_write_bytes desc)
+ where rownum<=20
+  ]]></sql>
+
+  <sql title="5-union sql" desc="包含5个及以上union的sql"><![CDATA[
+select a.sql_id, a.child_number, b.union_cnt, a.parsing_schema_name, a.sql_fulltext
+  from (select sql_id, child_number, parsing_schema_name, sql_fulltext
+          from v$sql
+         where parsing_schema_name in(select username from dba_users where account_status='OPEN' and username not in('SYS', 'SYSTEM'))
+           and sql_fulltext not like '%OracleAuditor_Marcus_Mao%'
+           and 'OracleAuditor'!='OracleAuditor_Marcus_Mao'
+           and lower(sql_fulltext) not like '% samplesub'
+           and lower(sql_fulltext) not like '%sys.%'
+           and lower(sql_fulltext) not like 'declare job binary_integer%'
+           and lower(sql_fulltext) not like '%:"sys_b%') a,
+       (select distinct a.sql_id, a.child_number, a.operation,
+               count(1) over(partition by a.sql_id, a.child_number) union_cnt
+          from v$sql_plan a, v$sql_plan b
+         where a.operation like 'UNION%'
+           and a.sql_id=b.sql_id
+           and a.child_number=b.child_number
+           and a.id=b.parent_id) b
+ where a.sql_id=b.sql_id
+   and a.child_number=b.child_number
+   and b.union_cnt>=5
+ order by b.union_cnt desc
+  ]]></sql>
+
+  <sql title="3-nested-loop sql" desc="包含3个及以上nested-loop的sql"><![CDATA[
+select a.sql_id, a.child_number, b.nl_cnt, a.parsing_schema_name, a.sql_fulltext
+  from (select sql_id, child_number, parsing_schema_name, sql_fulltext
+          from v$sql
+         where parsing_schema_name in(select username from dba_users where account_status='OPEN' and username not in('SYS', 'SYSTEM'))
+           and sql_fulltext not like '%OracleAuditor_Marcus_Mao%'
+           and 'OracleAuditor'!='OracleAuditor_Marcus_Mao'
+           and lower(sql_fulltext) not like '% samplesub'
+           and lower(sql_fulltext) not like '%sys.%'
+           and lower(sql_fulltext) not like 'declare job binary_integer%'
+           and lower(sql_fulltext) not like '%:"sys_b%') a,
+       (select sql_id, child_number, count(1) nl_cnt
+          from v$sql_plan
+         where operation='NESTED LOOPS'
+         group by sql_id, child_number) b
+ where a.sql_id=b.sql_id
+   and a.child_number=b.child_number
+   and b.nl_cnt>=3
+ order by b.nl_cnt desc
+  ]]></sql>
+
+  <sql title="50-or-in sql" desc="包含50个及以上or，或是in子句包含50个及以上值的sql"><![CDATA[
+select a.sql_id, a.child_number, b.or_cnt, a.parsing_schema_name, a.sql_fulltext
+  from (select sql_id, child_number, parsing_schema_name, sql_fulltext
+          from v$sql
+         where parsing_schema_name in(select username from dba_users where account_status='OPEN' and username not in('SYS', 'SYSTEM'))
+           and sql_fulltext not like '%OracleAuditor_Marcus_Mao%'
+           and 'OracleAuditor'!='OracleAuditor_Marcus_Mao'
+           and lower(sql_fulltext) not like '% samplesub'
+           and lower(sql_fulltext) not like '%sys.%'
+           and lower(sql_fulltext) not like 'declare job binary_integer%'
+           and lower(sql_fulltext) not like '%:"sys_b%') a,
+       (select sql_id, child_number, sum(regexp_count(filter_predicates, ' OR ')) or_cnt
+          from v$sql_plan
+         where filter_predicates like '% OR %'
+         group by sql_id, child_number) b
+ where a.sql_id=b.sql_id
+   and a.child_number=b.child_number
+   and b.or_cnt>=50
+ order by b.or_cnt desc
+  ]]></sql>
+
+  <sql title="2000 not using bind-var sql" desc="2000没有使用绑定变量的sql"><![CDATA[
+select sql_id, child_number, parsing_schema_name, sql_fulltext
+  from v$sql s
+ where parsing_schema_name in(select username from dba_users where account_status='OPEN' and username not in('SYS', 'SYSTEM'))
+   and sql_fulltext not like '%OracleAuditor_Marcus_Mao%'
+   and 'OracleAuditor'!='OracleAuditor_Marcus_Mao'
+   and lower(sql_fulltext) not like '% samplesub'
+   and lower(sql_fulltext) not like '%sys.%'
+   and lower(sql_fulltext) not like 'declare job binary_integer%'
+   and lower(sql_fulltext) not like '%:"sys_b%'
+   and bind_data is null
+   and not exists(select 1 from v$sql_bind_capture where sql_id=s.sql_id)
+   and rownum<=2000
+  ]]></sql>
+
+  <sql title="No-predicate delete-sql" desc="没有谓词的delete语句"><![CDATA[
+with sql_plan as (select a.sql_id, a.child_number, a.operation,
+                         a.sql_id || '_' || a.child_number || '_' || id id,
+                         decode(a.parent_id, null, null, a.sql_id || '_' || a.child_number || '_' || a.parent_id) parent_id,
+                         nvl(a.access_predicates, a.filter_predicates) predicates
+                    from v$sql_plan a, (select sql_id, child_number from v$sql_plan where operation='DELETE' and object_owner!='SYS') b
+                   where a.sql_id=b.sql_id
+                     and a.child_number=b.child_number)
+select a.sql_id, a.child_number, b.parsing_schema_name, b.sql_fulltext
+  from (select sql_id, child_number, listagg(predicates, ' ') within group(order by id) predicates
+          from (select s.*, sys_connect_by_path(operation, '/') op_path
+                  from sql_plan s
+                 start with parent_id is null
+               connect by prior id=parent_id)
+         where op_path like '%/DELETE/%'
+         group by sql_id, child_number) a, v$sql b
+ where predicates is null
+   and a.sql_id=b.sql_id
+   and a.child_number=b.child_number
+  ]]></sql>
+
+  <sql title="No-predicate update-sql" desc="没有谓词的update语句"><![CDATA[
+with sql_plan as (select a.sql_id, a.child_number, a.operation,
+                         a.sql_id || '_' || a.child_number || '_' || id id,
+                         decode(a.parent_id, null, null, a.sql_id || '_' || a.child_number || '_' || a.parent_id) parent_id,
+                         nvl(a.access_predicates, a.filter_predicates) predicates
+                    from v$sql_plan a, (select sql_id, child_number from v$sql_plan where operation='UPDATE' and object_owner!='SYS') b
+                   where a.sql_id=b.sql_id
+                     and a.child_number=b.child_number)
+select a.sql_id, a.child_number, b.parsing_schema_name, b.sql_fulltext
+  from (select sql_id, child_number, listagg(predicates, ' ') within group(order by id) predicates
+          from (select s.*, sys_connect_by_path(operation, '/') op_path
+                  from sql_plan s
+                 start with parent_id is null
+               connect by prior id=parent_id)
+         where op_path like '%/UPDATE/%'
+         group by sql_id, child_number) a, v$sql b
+ where predicates is null
+   and a.sql_id=b.sql_id
+   and a.child_number=b.child_number
+  ]]></sql>
+
+  <sql title="Cartesian sql" desc="可能产生笛卡尔积的sql"><![CDATA[
+select a.sql_id, a.child_number, b.parsing_schema_name, b.sql_fulltext
+  from (select distinct sql_id, child_number, operation || ' ' || options operation, object_owner, object_name
+          from v$sql_plan
+         where options='CARTESIAN') a, v$sql b
+ where a.sql_id=b.sql_id
+   and a.child_number=b.child_number
+   and lower(b.sql_fulltext) not like '% samplesub'
+   and lower(b.sql_fulltext) not like '%sys.%'
+   and lower(b.sql_fulltext) not like 'declare job binary_integer%'
+   and lower(b.sql_fulltext) not like '%:"sys_b%'
+   and b.parsing_schema_name in(select username from dba_users where account_status='OPEN' and username not in('SYS', 'SYSTEM'))
+   and b.sql_fulltext not like '%OracleAuditor_Marcus_Mao%'
+   and 'OracleAuditor'!='OracleAuditor_Marcus_Mao'
+ order by a.object_owner, a.object_name, a.sql_id, a.child_number
+  ]]></sql>
+
+  <sql title="Unusable indexes" desc="失效的索引"><![CDATA[
+select owner, index_name, partition_name, subpartition_name
+  from (select owner, index_name, 'N/A' partition_name, 'N/A' subpartition_name
+          from dba_indexes
+         where status='UNUSABLE'
+         union all
+        select index_owner owner, index_name, partition_name, 'N/A' subpartition_name
+          from dba_ind_partitions
+         where status='UNUSABLE'
+         union all
+        select index_owner owner, index_name, partition_name, subpartition_name
+          from dba_ind_subpartitions
+         where status='UNUSABLE')
+ order by owner, index_name
+  ]]></sql>
+</sqls>

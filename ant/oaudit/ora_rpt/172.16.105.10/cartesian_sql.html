@@ -1,0 +1,1393 @@
+<html>
+  <head>
+    <meta http-equiv='content-type' content='text/html; charset=utf-8'>
+    <meta charset='utf-8'>
+    <meta name='robots' content='all'>
+    <meta name='author' content='w3school.com.cn'>
+    <link rel='stylesheet' type='text/css' href='../css/c5.css'>
+    <title>
+Cartesian sql&nbsp;&nbsp;&nbsp;&nbsp;[可能产生笛卡尔积的sql]
+    </title>
+  </head>
+  <body class='html' id='tags'>
+    <div>
+      <h2>
+Cartesian sql&nbsp;&nbsp;&nbsp;&nbsp;[可能产生笛卡尔积的sql]
+      </h2>
+      <table class='dataintable'>
+        <tbody>
+          <tr>
+            <th>SQL_ID</th>
+            <th>CHILD_NUMBER</th>
+            <th>PARSING_SCHEMA_NAME</th>
+            <th>SQL_FULLTEXT</th>
+          </tr>
+          <tr>
+            <td>061b2rgmjymut</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT b.id,b.parentid as pid,b.resourcename as resourceName,b.label,b.url,b.resourcetype as resType,b.image, b.bigimage,b.sortorder,4 as type FROM NB_AUTH_USER_RESOURCE a,NB_AUTH_RESOURCES b, NB_AUTH_MODULES c WHERE b.moduleid = c.id and a.resourceid=b.id and b.resourcetype in (1,2) and a.userid=:1 and assign_type=:2 and b.state = 1 and c.state=1</td>
+          </tr>
+          <tr>
+            <td>0cc4pa2zx7dnd</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>select aa.object_id,aa.workflow_id,aa.object_title,aa.createtime,aa.createuserid,aa.createusername,aa.businessid,aa.owner,aa.step_id,aa.name,aa.node_name,aa.node_id,aa.nodetype,aa.modelname,aa.detail_url,aa.userids,aa.departmentid,aa.roleid,aa.user_type,aa.exectorurl,aa.executoroppodept,bb.userids approverids from (select to_char(ow.object_id) as object_id,ow.workflow_id,ow.object_title,ow.createtime,ow.createuserid,ow.createusername,ow.businessid,oc.owner,oc.step_id,oe.name,oa.node_name,oa.node_id,oa.nodetype,om.name modelname,om.object_detail_url detail_url,oa.userids,oa.departmentid,oa.roleid,oa.user_type,oa.exectorurl,oa.executoroppodept from os_currentstep oc,os_object_wfentry ow,os_wfentry oe,os_model om,os_model_attribute oa where oe.id=oc.entry_id and ow.workflow_id=oc.entry_id and om.model_id=oa.model_id and om.model_code=oe.name and oa.node_id=oc.step_id and oe.state=1) aa left join os_nextnodeparticipant bb on aa.workflow_id=bb.workflow_id and aa.node_id=bb.nodeid order by aa.createtime desc</td>
+          </tr>
+          <tr>
+            <td>0cd0932y7pxrh</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T40MASSPHONEBOOK'</td>
+          </tr>
+          <tr>
+            <td>0fyy65h3tdz67</td>
+            <td>0</td>
+            <td>NBPF_SQ</td>
+            <td>SELECT TABLE_NAME FROM USER_TABLES WHERE TABLE_NAME NOT LIKE '%TEMP' AND TABLE_NAME NOT LIKE '%TMP' </td>
+          </tr>
+          <tr>
+            <td>0phubm6zr5h6y</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT COUNT(1) FROM (  SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '09'  ORDER BY A.ADDTIME desc  )</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>0</td>
+            <td>NBDBN</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>1</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>2</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>3</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>4</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>5</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>6</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>7</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>8</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>9</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>10</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>16</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>17</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>18</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>19</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>20</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>21</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>22</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>23</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>24</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>25</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>26</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>29</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>30</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>31</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>32</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>33</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>34</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>35</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>36</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>37</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0scpj26n7xrnz</td>
+            <td>38</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='M'</td>
+          </tr>
+          <tr>
+            <td>0sru5c3y8sucu</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td> select table_name from user_tables where (table_name like 'TEST%' or table_name like 'TEMP%')</td>
+          </tr>
+          <tr>
+            <td>153qhdzv4xwq1</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T40SMS'</td>
+          </tr>
+          <tr>
+            <td>1dzcgpt54r0k4</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT * FROM ( SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '03'  ORDER BY A.ADDTIME desc ) WHERE rownum <= 10</td>
+          </tr>
+          <tr>
+            <td>1ryb7ht6jntum</td>
+            <td>0</td>
+            <td>NBDBN</td>
+            <td>SELECT COUNT(*) FROM USER_TABLES WHERE TABLE_NAME='CN_VTV_SQLLDR'</td>
+          </tr>
+          <tr>
+            <td>1t4dxrxpw9uyx</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T41LOCATION'</td>
+          </tr>
+          <tr>
+            <td>1t8kh2zdjhat5</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T40WCALL'</td>
+          </tr>
+          <tr>
+            <td>28x6jxpxfd7uk</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT * FROM ( SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '25'  ORDER BY A.ADDTIME desc ) WHERE rownum <= 10</td>
+          </tr>
+          <tr>
+            <td>2g1n4wp4uk6gr</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T42TAXI'</td>
+          </tr>
+          <tr>
+            <td>2sdj2ujk5vxtq</td>
+            <td>0</td>
+            <td>NCDB</td>
+            <td>select count(*) as count from (SELECT t3.id,t2.CASEID,t2.CASENO,t2.CASENAME,t2.CASETYPE,t2.CASENATURE,t2.CASECONTENT,t2.CASELEVEL,t2.CASECREATERID,t2.ADD_POLICENO,t2.PROFESSION_TYPE,t2.CAPTURETIME,t2.STATUS,t2.LASTMODIFY,t2.ISTEMP,t2.CREATETIME,t2.SUBCASETYPE,T1.Relatedtype,T1.Depid FROM Case_supervise_info t3  LEFT JOIN CASE_BASE_INFO t2 ON t3.caseid=t2.caseid  left join  Case_Base_department t1 on  t1.caseid=t2.caseid WHERE  T1.Relatedtype in(1,2) AND t2.ISTEMP='0' AND  t3.Deptid = '0'  and t1.Depid = '0' )</td>
+          </tr>
+          <tr>
+            <td>3108ym00acj37</td>
+            <td>2</td>
+            <td>NBPF</td>
+            <td>SELECT b.id,b.parentid as pid,b.resourcename as resourceName,b.label,b.url,b.resourcetype as resType,b.image, b.bigimage,b.sortorder,4 as type FROM nb_auth_user_resource a,nb_auth_resources b, nb_auth_modules c WHERE b.moduleid = c.id and a.resourceid=b.id and b.resourcetype in (1,2) and a.userid=:1 and assign_type=:2 and b.state = 1 and c.state=1</td>
+          </tr>
+          <tr>
+            <td>31p3s9zvfqdvn</td>
+            <td>0</td>
+            <td>NBDBN</td>
+            <td>SELECT COUNT(*) FROM USER_TABLES WHERE TABLE_NAME='CN_VTR_SQLLDR'</td>
+          </tr>
+          <tr>
+            <td>32jsm3ars6mc7</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT COUNT(1) FROM (  SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '10'  ORDER BY A.ADDTIME desc  )</td>
+          </tr>
+          <tr>
+            <td>32u82qk5qany5</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>    select count(*) from user_tables where table_name='RTS_TB_MONITOR_OBJECT_ALARM'</td>
+          </tr>
+          <tr>
+            <td>3b1fvrh6tdp85</td>
+            <td>0</td>
+            <td>NBPF_YF</td>
+            <td>SELECT TABLE_NAME FROM USER_TABLES WHERE TABLE_NAME IN('TB_DIMENSION_STATISTIC')</td>
+          </tr>
+          <tr>
+            <td>3b1fvrh6tdp85</td>
+            <td>1</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT TABLE_NAME FROM USER_TABLES WHERE TABLE_NAME IN('TB_DIMENSION_STATISTIC')</td>
+          </tr>
+          <tr>
+            <td>3j3q9wy3yf27j</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT * FROM ( SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '01'  ORDER BY A.ADDTIME desc ) WHERE rownum <= 10</td>
+          </tr>
+          <tr>
+            <td>3rdz16xggym84</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>select user_type,nodetype from os_model_attribute d , (select c.model_id model_id ,bb.stepid stepid from os_model c, (select a.step_id stepid,b.name model_code from os_currentstep a, os_wfentry b where a.entry_id=b.id and  a.entry_id=1677769202948) bb where c.model_code=bb.model_code ) cc where cc.model_id = d.model_id and cc.stepid= d.node_id</td>
+          </tr>
+          <tr>
+            <td>3s2n6zc1b864w</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>SELECT COUNT(*) FROM USER_TABLES WHERE TABLE_NAME='BASE_EXIST_OBJECT_TEMP'</td>
+          </tr>
+          <tr>
+            <td>3x8th55bv0adk</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T42FLIGHT'</td>
+          </tr>
+          <tr>
+            <td>45638k8hrxr0g</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT * FROM ( SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '20'  ORDER BY A.ADDTIME desc ) WHERE rownum <= 10</td>
+          </tr>
+          <tr>
+            <td>487d7d0shygwb</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT * FROM ( SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '06'  ORDER BY A.ADDTIME desc ) WHERE rownum <= 10</td>
+          </tr>
+          <tr>
+            <td>48rcparpf77zy</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT COUNT(1) FROM (  SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '13'  ORDER BY A.ADDTIME desc  )</td>
+          </tr>
+          <tr>
+            <td>4a26k0z4cp338</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T42WEBCHAT'</td>
+          </tr>
+          <tr>
+            <td>4fth3y8cgfg21</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T41IM'</td>
+          </tr>
+          <tr>
+            <td>4m12hfz72uzuv</td>
+            <td>0</td>
+            <td>NCDB</td>
+            <td>select count(*) as count from (SELECT t3.id,t2.CASEID,t2.CASENO,t2.CASENAME,t2.CASETYPE,t2.CASENATURE,t2.CASECONTENT,t2.CASELEVEL,t2.CASECREATERID,t2.ADD_POLICENO,t2.PROFESSION_TYPE,t2.CAPTURETIME,t2.STATUS,t2.LASTMODIFY,t2.ISTEMP,t2.CREATETIME,t2.SUBCASETYPE,T1.Relatedtype,T1.Depid FROM Case_supervise_info t3  LEFT JOIN CASE_BASE_INFO t2 ON t3.caseid=t2.caseid  left join  Case_Base_department t1 on  t1.caseid=t2.caseid WHERE  T1.Relatedtype in(1,2) AND t2.ISTEMP='0' AND  t3.Deptid = '0'  and t1.Depid = '0'  and t2.Profession_Type ='2' )</td>
+          </tr>
+          <tr>
+            <td>4pwx0m457xjnz</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT * FROM ( SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '14'  ORDER BY A.ADDTIME desc ) WHERE rownum <= 10</td>
+          </tr>
+          <tr>
+            <td>4r8qj8dfu4qw7</td>
+            <td>0</td>
+            <td>NBPF_SQ</td>
+            <td>SELECT PARTITIONED FROM USER_TABLES WHERE TABLE_NAME = :B1 </td>
+          </tr>
+          <tr>
+            <td>4t2hdcth1nhr8</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT A.ATIVEAREANAME AS CITYNAME, SUM(R.KEYCOUNT) AS KEYCOUNT FROM BASE_ATIVEAREATABLE A LEFT JOIN
+        NB_GEO_TGDINFOTABLE T ON A.ATIVEAREAID = T.ACTIVEAREAID LEFT JOIN BASE_DEVICE_DATA D ON  T.TGDID = D.TGDID
+       JOIN RTS_TB_THERMODY_CHART R ON D.DEVICE_ID=R.TGDID
+       WHERE A.ATIVEAREAID LIKE '6522%'
+			GROUP BY A.ATIVEAREANAME ORDER BY KEYCOUNT DESC
+</td>
+          </tr>
+          <tr>
+            <td>4xcsd3ymz2tsn</td>
+            <td>0</td>
+            <td>NBDBN</td>
+            <td>SELECT COUNT(*) FROM USER_TABLES WHERE TABLE_NAME='CN_KEYWORD_SQLLDR'</td>
+          </tr>
+          <tr>
+            <td>4z1dfggnbpkpp</td>
+            <td>0</td>
+            <td>COLL</td>
+            <td>SELECT TABLE_NAME FROM USER_TABLES WHERE TABLE_NAME = 'NB_APP_ATTACH_DAY_TEMP'</td>
+          </tr>
+          <tr>
+            <td>51dd2r95qat1n</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T41VPN'</td>
+          </tr>
+          <tr>
+            <td>51r0a02kv8ux8</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT COUNT(1) FROM (  SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '14'  ORDER BY A.ADDTIME desc  )</td>
+          </tr>
+          <tr>
+            <td>53gcwxv56ucx6</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT COUNT(1) FROM (  SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '15'  ORDER BY A.ADDTIME desc  )</td>
+          </tr>
+          <tr>
+            <td>53vnd9xhf61gd</td>
+            <td>0</td>
+            <td>NBDBN</td>
+            <td>SELECT COUNT(*) FROM USER_TABLES WHERE TABLE_NAME='CN_RTV_SQLLDR'</td>
+          </tr>
+          <tr>
+            <td>57dq8nmhvtabk</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T42WVSMS'</td>
+          </tr>
+          <tr>
+            <td>5cjsyu2tftugm</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T40P2P'</td>
+          </tr>
+          <tr>
+            <td>5d518r60w56qt</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT COUNT(1) FROM (  SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '32'  ORDER BY A.ADDTIME desc  )</td>
+          </tr>
+          <tr>
+            <td>5w0hzxf3kuhw7</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T42CNETP'</td>
+          </tr>
+          <tr>
+            <td>63rxdk8dy7xb6</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T40HOTEL'</td>
+          </tr>
+          <tr>
+            <td>64qgr0gsdtmkf</td>
+            <td>0</td>
+            <td>NBPF_YF</td>
+            <td>SELECT TABLE_NAME FROM USER_TABLES</td>
+          </tr>
+          <tr>
+            <td>64qgr0gsdtmkf</td>
+            <td>1</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT TABLE_NAME FROM USER_TABLES</td>
+          </tr>
+          <tr>
+            <td>675q2ntb9r9m0</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T40MBLOG'</td>
+          </tr>
+          <tr>
+            <td>68rttr58zt4n8</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>select user_type,nodetype from os_model_attribute d , (select c.model_id model_id ,bb.stepid stepid from os_model c, (select a.step_id stepid,b.name model_code from os_currentstep a, os_wfentry b where a.entry_id=b.id and  a.entry_id=1677769203156) bb where c.model_code=bb.model_code ) cc where cc.model_id = d.model_id and cc.stepid= d.node_id</td>
+          </tr>
+          <tr>
+            <td>6j1gfm2u3vhjg</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T42EXPRESS'</td>
+          </tr>
+          <tr>
+            <td>6jjxh8f1umyxy</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T41VOIP'</td>
+          </tr>
+          <tr>
+            <td>6p8hgmf3sc0mp</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T42ENGINE'</td>
+          </tr>
+          <tr>
+            <td>6q1w2mptbktcr</td>
+            <td>0</td>
+            <td>NBPF_YF</td>
+            <td>SELECT A.TABLE_NAME FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE=:B1 </td>
+          </tr>
+          <tr>
+            <td>6q1w2mptbktcr</td>
+            <td>1</td>
+            <td>NBPF_YF</td>
+            <td>SELECT A.TABLE_NAME FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE=:B1 </td>
+          </tr>
+          <tr>
+            <td>6q1w2mptbktcr</td>
+            <td>4</td>
+            <td>NBPF_YF</td>
+            <td>SELECT A.TABLE_NAME FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE=:B1 </td>
+          </tr>
+          <tr>
+            <td>6s99vhg6b16vk</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>select t1.start_date,
+       t1.status,
+       t1.node_name,
+       t1.userinfo,
+       t1.model_id,
+       t1.entry_id,
+       t1.id,
+       t1.step_id,
+       t2.op_user,
+       t2.op_advices,
+       t2.op_time,
+       t2.op_stepname,
+       t3.signstatus,
+       t3.signtime,
+       t1.action_id,
+       t1.nodetype
+  from (select id,
+               entry_id,
+               step_id,
+               status,
+               start_date,
+               m.node_name,
+               m.userinfo,
+               m.model_id,
+               m.nodetype,
+               c.action_id
+          from OS_CURRENTSTEP c, OS_MODEL_ATTRIBUTE m
+         where c.entry_id in (1677769202948)
+           and c.step_id = m.node_id
+           and m.model_id in
+               (select model_id
+                  from OS_MODEL
+                 where model_code in
+                       (select name from OS_WFENTRY where id in (1677769202948)))
+        union all
+        select id,
+               entry_id,
+               step_id,
+               status,
+               start_date,
+               m.node_name,
+               m.userinfo,
+               m.model_id,
+               m.nodetype,
+               h.action_id
+          from OS_HISTORYSTEP h, OS_MODEL_ATTRIBUTE m
+         where h.entry_id in (1677769202948)
+           and h.step_id = m.node_id
+           and m.model_id in
+               (select model_id
+                  from OS_MODEL
+                 where model_code in
+                       (select name from OS_WFENTRY where id in (1677769202948)))) t1,
+       (select a.op_user, a.op_advices, a.op_time, a.op_stepname, a.nodeid
+          from OS_OPERATION_HISTORY a
+         where workflow_id in (1677769202948)
+           and a.op_remark = '1') t2,
+       (select signstatus, signtime, nodeid
+          from OS_NODESIGNSTATUS
+         where workflowid in (1677769202948)) t3
+ where t1.id = t2.nodeid(+)
+   and t1.id = t3.nodeid(+)
+ order by t2.OP_TIME
+</td>
+          </tr>
+          <tr>
+            <td>6u6pdg9cjvjar</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>select a.* from OS_MODEL_ATTRIBUTE a, OS_MODEL b, OS_WFENTRY c where c.id = 1677769203169 and c.name = b.model_code and a.model_id = b.model_id and a.node_id = 25</td>
+          </tr>
+          <tr>
+            <td>6wkw2236vyyhh</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>select t1.start_date,t1.status,t1.node_name,t1.userinfo,t1.model_id,t1.entry_id,t1.id,t1.step_id,t2.op_user,t2.op_advices,t2.op_time,t2.op_stepname,t3.signstatus,t3.signtime,t1.action_id,t1.nodetype from  (select id,entry_id,step_id,status,start_date,m.node_name,m.userinfo,m.model_id,m.nodetype,c.action_id from OS_CURRENTSTEP  c,OS_MODEL_ATTRIBUTE m where c.entry_id in (1677769203156) and c.step_id = m.node_id and m.model_id in (select model_id from OS_MODEL where model_code in (select name from OS_WFENTRY  where id in (1677769203156))) union all  select id,entry_id,step_id,status,start_date,m.node_name,m.userinfo,m.model_id,m.nodetype,h.action_id from OS_HISTORYSTEP  h,OS_MODEL_ATTRIBUTE m where  h.entry_id in (1677769203156) and h.step_id=m.node_id and m.model_id in (select model_id from OS_MODEL where model_code in (select name from OS_WFENTRY  where id in (1677769203156)))) t1 left join  (select a.op_user, a.op_advices, a.op_time, a.op_stepname, a.nodeid from OS_OPERATION_HISTORY a where workflow_id in (1677769203156) and a.op_remark ='1')t2 on t1.id=t2.nodeid left join (select signstatus,signtime,nodeid from OS_NODESIGNSTATUS where workflowid in (1677769203156)) t3 on t1.id=t3.nodeid order by t2.OP_TIME</td>
+          </tr>
+          <tr>
+            <td>6wtf1hfzng2jx</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T42OTHER'</td>
+          </tr>
+          <tr>
+            <td>72vcqh6tcvqas</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select t.* from user_tables t where t.table_name like 'T%'
+</td>
+          </tr>
+          <tr>
+            <td>72vcqh6tcvqas</td>
+            <td>1</td>
+            <td>FHNSDB</td>
+            <td>select t.* from user_tables t where t.table_name like 'T%'
+</td>
+          </tr>
+          <tr>
+            <td>7x0xwcqw8gytd</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT * FROM ( select * from  (select to_char(w.OBJECT_ID) OBJECT_ID,W.OBJECT_TITLE,W.CREATETIME,W.CREATEUSERID,W.CREATEUSERNAME,W.BUSINESSID,f.name,m.name modelname,m.object_detail_url detail_url,s.WORKFLOW_ID,s.OP_USER,s.OP_ADVICES,s.OP_TIME,s.OP_STEPID,s.OP_ACTIONID,s.op_actionname from os_object_wfentry  w,os_model m,os_wfentry f,(select WORKFLOW_ID,OP_USER,OP_ADVICES,OP_TIME,OP_REMARK,OP_STEPNAME,OP_ACTIONNAME,OP_STEPID,OP_ACTIONID from (select * from (select a.*,rownum row_num from os_operation_history a where a.op_user=10000) b where b.row_num in(select min(rownum) from os_operation_history where op_user=10000 group by op_user,workflow_id,nodeid,op_actionid,op_stepid))) s where s.workflow_id =w.workflow_id and w.workflow_id=f.id and f.name=m.model_code  union all  select to_char(w.OBJECT_ID) OBJECT_ID,W.OBJECT_TITLE,W.CREATETIME,W.CREATEUSERID,W.CREATEUSERNAME,W.BUSINESSID,f.name,m.name modelname,m.object_detail_url detail_url,s.WORKFLOW_ID,s.OP_USER,s.OP_ADVICES,s.OP_TIME,s.OP_STEPID,s.OP_ACTIONID,s.op_actionname from os_object_wfentry_history  w,os_model m,os_wfentry f,(select WORKFLOW_ID,OP_USER,OP_ADVICES,OP_TIME,OP_REMARK,OP_STEPNAME,OP_ACTIONNAME,OP_STEPID,OP_ACTIONID from (select * from (select a.*,rownum row_num from os_operation_history a where a.op_user=10000) b where b.row_num in(select min(rownum) from os_operation_history where op_user=10000 group by op_user,workflow_id,nodeid,op_actionid,op_stepid))) s where s.workflow_id =w.workflow_id and w.workflow_id=f.id and f.name=m.model_code )order by op_time desc ) WHERE rownum <= 20</td>
+          </tr>
+          <tr>
+            <td>845hzp6a7v9mg</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT * FROM ( select to_char(ow.object_id) as object_id,ow.workflow_id,ow.object_title,ow.createtime,ow.createuserid,ow.createusername,ow.businessid,oc.owner,oc.step_id,oe.name,oa.node_name,oa.node_id,oa.nodetype,om.name modelname,om.object_detail_url detail_url,oa.userids,oa.departmentid,oa.roleid,oa.user_type,oa.exectorurl,oa.executoroppodept from os_currentstep oc,os_object_wfentry ow,os_wfentry oe,os_model om,os_model_attribute oa where oe.id=oc.entry_id and ow.workflow_id=oc.entry_id and om.model_id=oa.model_id and om.model_code=oe.name and oa.node_id=oc.step_id and oe.state=1 order by ow.createtime desc ) WHERE ROWNUM <= 10</td>
+          </tr>
+          <tr>
+            <td>845hzp6a7v9mg</td>
+            <td>1</td>
+            <td>NBPF</td>
+            <td>SELECT * FROM ( select to_char(ow.object_id) as object_id,ow.workflow_id,ow.object_title,ow.createtime,ow.createuserid,ow.createusername,ow.businessid,oc.owner,oc.step_id,oe.name,oa.node_name,oa.node_id,oa.nodetype,om.name modelname,om.object_detail_url detail_url,oa.userids,oa.departmentid,oa.roleid,oa.user_type,oa.exectorurl,oa.executoroppodept from os_currentstep oc,os_object_wfentry ow,os_wfentry oe,os_model om,os_model_attribute oa where oe.id=oc.entry_id and ow.workflow_id=oc.entry_id and om.model_id=oa.model_id and om.model_code=oe.name and oa.node_id=oc.step_id and oe.state=1 order by ow.createtime desc ) WHERE ROWNUM <= 10</td>
+          </tr>
+          <tr>
+            <td>8h97tdnkv3mvc</td>
+            <td>0</td>
+            <td>FHNSDB1</td>
+            <td> select table_name
+      from user_tables
+     where (table_name like 'TEST%' or table_name like 'TEMP%')</td>
+          </tr>
+          <tr>
+            <td>8krt1jyf6uztu</td>
+            <td>0</td>
+            <td>NBPF_YF</td>
+            <td>SELECT PARTITIONED FROM USER_TABLES WHERE TABLE_NAME=:B1 </td>
+          </tr>
+          <tr>
+            <td>8krt1jyf6uztu</td>
+            <td>1</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT PARTITIONED FROM USER_TABLES WHERE TABLE_NAME=:B1 </td>
+          </tr>
+          <tr>
+            <td>8x8sywsvuvruf</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T42WCALL'</td>
+          </tr>
+          <tr>
+            <td>91yh6csk4f3ks</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T42NETLINK'</td>
+          </tr>
+          <tr>
+            <td>93k4t4ndtqfc0</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT * FROM ( SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '15'  ORDER BY A.ADDTIME desc ) WHERE rownum <= 10</td>
+          </tr>
+          <tr>
+            <td>959fsm16sfd1w</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>select sum(totals) from (select count(1) totals from os_object_wfentry  w,os_wfentry f,os_model m,(select WORKFLOW_ID,OP_TIME,OP_ACTIONNAME,OP_ACTIONID from (select * from (select a.*,rownum row_num from os_operation_history a where a.op_user=5559336) b where b.row_num in(select min(rownum) from os_operation_history where op_user=5559336 group by op_user,workflow_id,nodeid,op_actionid,op_stepid))) s where s.workflow_id =w.workflow_id and w.workflow_id = f.id and f.name = m.model_code union all select count(1) totals from os_object_wfentry_history  w,os_wfentry f,os_model m,(select WORKFLOW_ID,OP_TIME,OP_ACTIONNAME,OP_ACTIONID from (select * from (select a.*,rownum row_num from os_operation_history a where a.op_user=5559336) b where b.row_num in(select min(rownum) from os_operation_history where op_user=5559336 group by op_user,workflow_id,nodeid,op_actionid,op_stepid))) s where s.workflow_id =w.workflow_id and w.workflow_id = f.id and f.name = m.model_code)</td>
+          </tr>
+          <tr>
+            <td>9d0s1djdf899y</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT COUNT(1) FROM (  SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '22'  ORDER BY A.ADDTIME desc  )</td>
+          </tr>
+          <tr>
+            <td>9h03ahdh7211n</td>
+            <td>0</td>
+            <td>NBPF_YF</td>
+            <td>SELECT TABLE_NAME FROM USER_TABLES WHERE TABLE_NAME LIKE 'TEMP%'</td>
+          </tr>
+          <tr>
+            <td>9yj81a451f6b0</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>select to_char(ow.object_id) as object_id,ow.workflow_id,ow.object_title,ow.createtime,ow.createuserid,ow.createusername,ow.businessid,oc.owner,oc.step_id,oe.name,oa.node_name,oa.node_id,oa.nodetype,om.name modelname,om.object_detail_url detail_url,oa.userids,oa.departmentid,oa.roleid,oa.user_type,oa.exectorurl,oa.executoroppodept from os_currentstep oc,os_object_wfentry ow,os_wfentry oe,os_model om,os_model_attribute oa where oe.id=oc.entry_id and ow.workflow_id=oc.entry_id and om.model_id=oa.model_id and om.model_code=oe.name and oa.node_id=oc.step_id and oe.state=1 order by ow.createtime desc</td>
+          </tr>
+          <tr>
+            <td>9yj81a451f6b0</td>
+            <td>1</td>
+            <td>NBPF</td>
+            <td>select to_char(ow.object_id) as object_id,ow.workflow_id,ow.object_title,ow.createtime,ow.createuserid,ow.createusername,ow.businessid,oc.owner,oc.step_id,oe.name,oa.node_name,oa.node_id,oa.nodetype,om.name modelname,om.object_detail_url detail_url,oa.userids,oa.departmentid,oa.roleid,oa.user_type,oa.exectorurl,oa.executoroppodept from os_currentstep oc,os_object_wfentry ow,os_wfentry oe,os_model om,os_model_attribute oa where oe.id=oc.entry_id and ow.workflow_id=oc.entry_id and om.model_id=oa.model_id and om.model_code=oe.name and oa.node_id=oc.step_id and oe.state=1 order by ow.createtime desc</td>
+          </tr>
+          <tr>
+            <td>a2hdrf6cdp3u6</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT COUNT(1) FROM (  SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '06'  ORDER BY A.ADDTIME desc  )</td>
+          </tr>
+          <tr>
+            <td>a7wvf0u4kupzm</td>
+            <td>0</td>
+            <td>NBMONITOR</td>
+            <td>SELECT TABLE_NAME FROM USER_TABLES WHERE TABLE_NAME IN ('NB_MONITOR_AUTH','NB_MONITOR_EMAIL','NB_MONITOR_HTTP','NB_MONITOR_IM','NB_MONITOR_DNS','NB_MONITOR_GAMBLE','NB_MONITOR_OVERNET','NB_MONITOR_MBLOG','NB_MONITOR_SNS','NB_MONITOR_FTP','NB_MONITOR_MMS','NB_MONITOR_OTHER','NB_MONITOR_BLOG','NB_MONITOR_WEBBBS','NB_MONITOR_P2P','NB_MONITOR_STREAMMEDIA','NB_MONITOR_UPLOAD','NB_MONITOR_RECHARGE','NB_MONITOR_RENT','NB_MONITOR_PAYMENT','NB_MONITOR_TRAIN','NB_MONITOR_BUS','NB_MONITOR_LOCATION','NB_MONITOR_MASSPHONEBOOK','NB_MONITOR_GAME','NB_MONITOR_TELNET','NB_MONITOR_VOIP','NB_MONITOR_PROXY','NB_MONITOR_VPN','NB_MONITOR_REMOTECTRL','NB_MONITOR_ENGINE','NB_MONITOR_EXPRESS','NB_MONITOR_GOODS','NB_MONITOR_HOTEL','NB_MONITOR_FLIGHT','NB_MONITOR_RESUME','NB_MONITOR_TRACK','NB_MONITOR_DEVICEGSM','NB_MONITOR_DEVICEWIFI','NB_MONITOR_DEVICEAPP','NB_MONITOR_TERMINALINFO')</td>
+          </tr>
+          <tr>
+            <td>a9gthwy2j1jcf</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T41BLOG'</td>
+          </tr>
+          <tr>
+            <td>adc06avp2dphf</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT * FROM ( SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '22'  ORDER BY A.ADDTIME desc ) WHERE rownum <= 10</td>
+          </tr>
+          <tr>
+            <td>apwmvtys2kqm3</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T40WEBSHARE'</td>
+          </tr>
+          <tr>
+            <td>aybzjm6zrb45g</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT COUNT(1) FROM (  SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '01'  ORDER BY A.ADDTIME desc  )</td>
+          </tr>
+          <tr>
+            <td>b241yj2fw5w5p</td>
+            <td>0</td>
+            <td>NBDBN</td>
+            <td>SELECT COUNT(*) FROM USER_TABLES WHERE TABLE_NAME='CN_RTR_SQLLDR'</td>
+          </tr>
+          <tr>
+            <td>b2bfzbjkadtmd</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT * FROM ( SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '51'  ORDER BY A.ADDTIME desc ) WHERE rownum <= 10</td>
+          </tr>
+          <tr>
+            <td>b6ju7pjfkqyhc</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT b.id,b.parentid as pid,b.resourcename as resourceName,b.label,b.url,b.resourcetype as resType,b.image, b.bigimage,b.sortorder,4 as type FROM nb_auth_user_resource a,nb_auth_resources b, nb_auth_modules c WHERE b.moduleid = c.id and a.resourceid=b.id and b.resourcetype in (1) and a.userid=:1 and assign_type=:2 and b.state = 1 and c.state=1</td>
+          </tr>
+          <tr>
+            <td>b7jvdbdq6zsc2</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>SELECT * FROM user_tables
+</td>
+          </tr>
+          <tr>
+            <td>bjdmdcy860mv5</td>
+            <td>0</td>
+            <td>KEYWORD</td>
+            <td>SELECT TABLE_NAME FROM USER_TABLES WHERE TABLE_NAME IN ('QUERY_INDEX_TB','QUERY_RESULT_TB')</td>
+          </tr>
+          <tr>
+            <td>bkjpvsac3kt5b</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T40FTP'</td>
+          </tr>
+          <tr>
+            <td>bvadt1q9f6vf3</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT * FROM ( SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '32'  ORDER BY A.ADDTIME desc ) WHERE rownum <= 10</td>
+          </tr>
+          <tr>
+            <td>bvrk14tfyzjra</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T41FLIGHT'</td>
+          </tr>
+          <tr>
+            <td>bvw5f7ntqg7jg</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT * FROM ( SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '13'  ORDER BY A.ADDTIME desc ) WHERE rownum <= 10</td>
+          </tr>
+          <tr>
+            <td>c0gxjcp3dfa5q</td>
+            <td>0</td>
+            <td>NBPF_ATEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME = B.TABLE_NAME AND A.PART_MODE = 'M'</td>
+          </tr>
+          <tr>
+            <td>c0gxjcp3dfa5q</td>
+            <td>1</td>
+            <td>BIGDATA</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME = B.TABLE_NAME AND A.PART_MODE = 'M'</td>
+          </tr>
+          <tr>
+            <td>c0gxjcp3dfa5q</td>
+            <td>2</td>
+            <td>NBPF_ATEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME = B.TABLE_NAME AND A.PART_MODE = 'M'</td>
+          </tr>
+          <tr>
+            <td>c0gxjcp3dfa5q</td>
+            <td>3</td>
+            <td>NBPF_BTEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME = B.TABLE_NAME AND A.PART_MODE = 'M'</td>
+          </tr>
+          <tr>
+            <td>c0gxjcp3dfa5q</td>
+            <td>4</td>
+            <td>NBPF_ATEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME = B.TABLE_NAME AND A.PART_MODE = 'M'</td>
+          </tr>
+          <tr>
+            <td>c0gxjcp3dfa5q</td>
+            <td>5</td>
+            <td>NBPF_BTEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME = B.TABLE_NAME AND A.PART_MODE = 'M'</td>
+          </tr>
+          <tr>
+            <td>c0gxjcp3dfa5q</td>
+            <td>6</td>
+            <td>NBPF_ATEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME = B.TABLE_NAME AND A.PART_MODE = 'M'</td>
+          </tr>
+          <tr>
+            <td>c0gxjcp3dfa5q</td>
+            <td>7</td>
+            <td>NBPF_BTEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME = B.TABLE_NAME AND A.PART_MODE = 'M'</td>
+          </tr>
+          <tr>
+            <td>c0gxjcp3dfa5q</td>
+            <td>8</td>
+            <td>NBPF_ATEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME = B.TABLE_NAME AND A.PART_MODE = 'M'</td>
+          </tr>
+          <tr>
+            <td>c0gxjcp3dfa5q</td>
+            <td>9</td>
+            <td>NBPF_BTEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME = B.TABLE_NAME AND A.PART_MODE = 'M'</td>
+          </tr>
+          <tr>
+            <td>c0gxjcp3dfa5q</td>
+            <td>10</td>
+            <td>NBPF_BTEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME = B.TABLE_NAME AND A.PART_MODE = 'M'</td>
+          </tr>
+          <tr>
+            <td>c0gxjcp3dfa5q</td>
+            <td>11</td>
+            <td>NBPF_ATEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME = B.TABLE_NAME AND A.PART_MODE = 'M'</td>
+          </tr>
+          <tr>
+            <td>c0gxjcp3dfa5q</td>
+            <td>12</td>
+            <td>NBPF_SQ</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME = B.TABLE_NAME AND A.PART_MODE = 'M'</td>
+          </tr>
+          <tr>
+            <td>c0gxjcp3dfa5q</td>
+            <td>13</td>
+            <td>NBPF_ATEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME = B.TABLE_NAME AND A.PART_MODE = 'M'</td>
+          </tr>
+          <tr>
+            <td>c0gxjcp3dfa5q</td>
+            <td>14</td>
+            <td>NBPF_BTEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME = B.TABLE_NAME AND A.PART_MODE = 'M'</td>
+          </tr>
+          <tr>
+            <td>c0gxjcp3dfa5q</td>
+            <td>15</td>
+            <td>NBPF_BTEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME = B.TABLE_NAME AND A.PART_MODE = 'M'</td>
+          </tr>
+          <tr>
+            <td>c0gxjcp3dfa5q</td>
+            <td>16</td>
+            <td>NBPF_SQ</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME = B.TABLE_NAME AND A.PART_MODE = 'M'</td>
+          </tr>
+          <tr>
+            <td>ca3hc7adksm8f</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT COUNT(1) FROM (  SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '03'  ORDER BY A.ADDTIME desc  )</td>
+          </tr>
+          <tr>
+            <td>ca6ckayfhycjz</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T41WEBSHARE'</td>
+          </tr>
+          <tr>
+            <td>casw1nt069yyn</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT COUNT(1) FROM (  SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '51'  ORDER BY A.ADDTIME desc  )</td>
+          </tr>
+          <tr>
+            <td>cdcxxhf2y8221</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T41HTTP'</td>
+          </tr>
+          <tr>
+            <td>cg2yxr1smwjt4</td>
+            <td>0</td>
+            <td>EVIDENCE</td>
+            <td>SELECT TABLE_NAME FROM USER_TABLES WHERE TABLE_NAME LIKE 'MR%'</td>
+          </tr>
+          <tr>
+            <td>cjbsh5vw1gswp</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT * FROM ( SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '09'  ORDER BY A.ADDTIME desc ) WHERE rownum <= 10</td>
+          </tr>
+          <tr>
+            <td>ckzc6fbkcn1nx</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT * FROM ( SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '10'  ORDER BY A.ADDTIME desc ) WHERE rownum <= 10</td>
+          </tr>
+          <tr>
+            <td>cngbmpykc7fx6</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T40FLIGHT'</td>
+          </tr>
+          <tr>
+            <td>cyab341pttb1g</td>
+            <td>0</td>
+            <td>KEYWORD</td>
+            <td>INSERT /*+ BYPASS_RECURSIVE_CHECK */ INTO "KEYWORD"."EMP_KEYWORD_LIST_INFO" with t1 as (select L1.keyname,L1.used,L1.classid,L1.keyid,L1.issave,L1.searchflag,NVL(L1.totalcnt, 0) AS totalcnt1,L1.userid,NVL(L1.archivednum, 0) AS archivednum,L1.starttime,L1.endtime,L1.updatetime,L1.remark,NVL(L1.readednum, 0) as readednum from timequerykeytable L1),
+t2 as (SELECT L2.describe,L2.classid FROM base_sensitive_type L2,t1 group by (L2.describe,L2.classid)),
+t3 as (SELECT L3.keyid,sum((NVL(L3.TOTALCNT, 0) - NVL(L3.deletednum, 0))) as todaycnt FROM timequerycounttable L3 where L3.datadate = to_char(TRUNC(SYSDATE),'yyyymmdd') group by L3.keyid),
+t4 as (select t1.keyname,t1.used,t1.classid,t1.keyid,t1.issave,t1.searchflag,t1.totalcnt1,t1.userid,t1.archivednum,t1.starttime,t1.endtime,t1.updatetime,t1.remark,t1.readednum,t2.describe from t1 left join t2 on t1.classid = t2.classid),
+t5 as (select t4.keyname,t4.used,t4.classid,t4.keyid,t4.issave,t4.searchflag,t4.totalcnt1,t4.userid,t4.archivednum,t4.starttime,t4.endtime,t4.updatetime,t4.remark,t4.readednum,t4.describe,NVL(t3.todaycnt,0) as todaycnt from t4 left join t3 on t4.keyid = t3.keyid)
+select t5.* from t5</td>
+          </tr>
+          <tr>
+            <td>d5tw0b5a8jd6b</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T41ENGINE'</td>
+          </tr>
+          <tr>
+            <td>dy5w9z17rf6j1</td>
+            <td>0</td>
+            <td>NBDBN</td>
+            <td>SELECT COUNT(*) FROM USER_TABLES WHERE TABLE_NAME='CN_IMPORT_ATTRIBUTE_TMP'</td>
+          </tr>
+          <tr>
+            <td>f5p2v3sbvvqg9</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT COUNT(1) FROM (  SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '20'  ORDER BY A.ADDTIME desc  )</td>
+          </tr>
+          <tr>
+            <td>f7f6zpqjnpkcn</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select t.* from user_tables t
+</td>
+          </tr>
+          <tr>
+            <td>fbz4ab5amqta1</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>select t1.from_node node_Id, t1.to_node, t4.nodetype from OS_PATH_ATTRIBUTE t1, OS_WFENTRY t2, OS_MODEL t3, OS_MODEL_ATTRIBUTE t4 where t1.model_id = t3.model_id and t2.name = t3.model_code and t1.model_id=t4.model_id and t1.from_node=t4.node_id and t2.id =1677769203156 and t1.action_id =16</td>
+          </tr>
+          <tr>
+            <td>fgwm1kazruq5j</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T41MOBILEKEEPER'</td>
+          </tr>
+          <tr>
+            <td>fhushpbrx05vp</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T42TRACK'</td>
+          </tr>
+          <tr>
+            <td>fsa2c2vu6n4vy</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT COUNT(1) FROM (  SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '11'  ORDER BY A.ADDTIME desc  )</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>0</td>
+            <td>NBDBN</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>1</td>
+            <td>BIGDATA</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>2</td>
+            <td>NBPF_SQ</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>3</td>
+            <td>NBPF_PROJECT</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>4</td>
+            <td>YDBIAN</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>5</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>6</td>
+            <td>NBPF_ATEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>7</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>8</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>9</td>
+            <td>NBPF_BTEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>10</td>
+            <td>NBPF_SQ</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>11</td>
+            <td>YDBIAN</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>12</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>13</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>14</td>
+            <td>NBPF_ATEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>15</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>16</td>
+            <td>NBPF_BTEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>17</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>18</td>
+            <td>NBPF_ATEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>19</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>20</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>21</td>
+            <td>NBPF_BTEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>22</td>
+            <td>YDBIAN</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>23</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>24</td>
+            <td>NBPF_ATEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>25</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>26</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>27</td>
+            <td>NBPF_BTEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>28</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>29</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>30</td>
+            <td>NBPF_ATEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>31</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>32</td>
+            <td>NBPF_BTEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>33</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>34</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>35</td>
+            <td>YDBIAN</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>36</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>37</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>38</td>
+            <td>NBPF_ATEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>39</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>40</td>
+            <td>NBPF_BTEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>41</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>42</td>
+            <td>NBPF_ATEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>43</td>
+            <td>NBPF_BTEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>44</td>
+            <td>YDBIAN</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>45</td>
+            <td>NBPF_SQ</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>46</td>
+            <td>NBPF_PLIU</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>47</td>
+            <td>NBPF_BDC</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>48</td>
+            <td>NBPF_ATEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>49</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>50</td>
+            <td>NBPF_BTEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>64</td>
+            <td>NBPF</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>65</td>
+            <td>NBPF_ATEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>ft502m1qp9njn</td>
+            <td>66</td>
+            <td>NBPF_BTEST</td>
+            <td>SELECT A.TABLE_NAME, A.PRE_TIME, A.KEEP_TIME, A.DT_MODE FROM BASE_ADDPART_CONFIG A, USER_TABLES B WHERE A.TABLE_NAME=B.TABLE_NAME AND A.PART_MODE='D'</td>
+          </tr>
+          <tr>
+            <td>fuf1tvnysqab1</td>
+            <td>0</td>
+            <td>NBPF_YF</td>
+            <td>SELECT TABLE_NAME FROM USER_TABLES WHERE TABLE_NAME LIKE 'PSMAILBOX%' AND ASCII(SUBSTR(TABLE_NAME, 10, 1)) BETWEEN 48 AND 57</td>
+          </tr>
+          <tr>
+            <td>g294x03u3hb4y</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT * FROM ( SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '11'  ORDER BY A.ADDTIME desc ) WHERE rownum <= 10</td>
+          </tr>
+          <tr>
+            <td>gasbm693fmqza</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT * FROM all_tables
+</td>
+          </tr>
+          <tr>
+            <td>gbmv454t70880</td>
+            <td>0</td>
+            <td>NBPF</td>
+            <td>SELECT COUNT(1) FROM (  SELECT T.RULEID,T.RULENAME, A.ADDTIME, A.FLAG    FROM TB_RULE_INFO A,  		(SELECT B.RULEID,LISTAGG(C.NAME || ':' || B.RULENAME ,'；') WITHIN GROUP(ORDER BY B.RULEID) AS RULENAME  			FROM TB_RULE_DETAIL B, TB_RULETYPE_DICT C 				WHERE B.RULETYPE = C.TYPE GROUP BY B.RULEID) T  WHERE A.RULEID = T.RULEID    AND A.RULELEVEL = '25'  ORDER BY A.ADDTIME desc  )</td>
+          </tr>
+          <tr>
+            <td>gnn8wtb293hs8</td>
+            <td>0</td>
+            <td>FHNSDB</td>
+            <td>select count(*) from user_tables where table_name='T40DEVICEWIFI'</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
